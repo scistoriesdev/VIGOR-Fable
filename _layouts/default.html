@@ -14,6 +14,11 @@
 </head>
 <body>
   <div class="preview-band t-ui-small" role="note">Design preview — not the live VIGOR study site.</div>
-  {{ content }}
+  {% include header.html %}
+  <main id="main">
+    {{ content }}
+  </main>
+  {% include footer.html %}
+  {% include join-preview.html %}
 </body>
 </html>

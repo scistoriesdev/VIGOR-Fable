@@ -1,0 +1,18 @@
+{%- comment -%} Figma 352:7 · WP header.php {%- endcomment -%}
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-header__brand" href="{{ '/' | relative_url }}">
+      <img src="{{ '/assets/img/vigor-logo.svg' | relative_url }}" width="205" height="80" alt="VIGOR Study home">
+    </a>
+    <div class="site-header__right">
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          {%- for item in site.data.navigation.main %}
+          <li>{% include nav-link.html item=item class="site-nav__link t-body" %}</li>
+          {%- endfor %}
+        </ul>
+      </nav>
+      {% include cta-join.html %}
+    </div>
+  </div>
+</header>

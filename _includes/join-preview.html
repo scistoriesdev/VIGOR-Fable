@@ -1,0 +1,10 @@
+{%- comment -%}
+  PREVIEW ONLY. Every Join the Study control opens this instead of the live
+  enrolment endpoint, so a design review can never create a real enrolment.
+  Delete this include (and point cta-join.html at the real URL) at launch.
+{%- endcomment -%}
+<div id="join-preview" class="join-preview" popover aria-labelledby="join-preview-h">
+  <p id="join-preview-h" class="t-ui-strong">Enrolment is switched off in this preview</p>
+  <p class="t-body">On the live site, this button opens the VIGOR enrolment form. Nothing is sent from this page.</p>
+  <button type="button" class="join-preview__close t-ui-small" popovertarget="join-preview" popovertargetaction="hide">Close</button>
+</div>

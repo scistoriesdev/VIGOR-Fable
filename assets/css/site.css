@@ -26,8 +26,10 @@ h1,h2,h3{ text-wrap:balance; }
 img,svg{ display:block; max-width:100%; height:auto; }
 a{ color:var(--color-accent); }
 
-/* Sticky header must not cover in-page targets */
-[id]{ scroll-margin-top:96px; }
+/* Sticky header must not cover in-page targets.
+   Header is 113px in Figma 352:7 (16 + 80 logo + 16 + 1 rule). */
+:root{ --header-h:113px; }
+[id]{ scroll-margin-top:calc(var(--header-h) + var(--space-4)); }
 
 /* ---------- grid geometry: 1320 container, 60px side margin ---------- */
 .container{
@@ -52,3 +54,118 @@ a{ color:var(--color-accent); }
   text-align:center;
 }
 
+
+/* ---------- Join the Study (cta-join.html) ---------- */
+.btn-join{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height:56px; margin:0;
+  padding:var(--space-4) var(--space-6);
+  border:0; border-radius:var(--radius-full);
+  background:var(--color-join);
+  color:var(--color-join-label);          /* pure #FFF — text-inverse fails at 4.24:1 */
+  white-space:nowrap; cursor:pointer;
+}
+.btn-join:hover{ background:var(--color-join-hover); }
+.btn-join--l{ width:min(560px,100%); min-height:66px; }
+.btn-join--footer{ box-shadow:0 0 0 2px var(--color-text-inverse); }
+
+/* PREVIEW: what Join opens instead of the enrolment endpoint */
+.join-preview{
+  width:min(424px, calc(100% - 2 * var(--space-4)));
+  margin:auto; padding:var(--space-6);
+  border:0; border-radius:var(--radius-md);
+  background:var(--color-card); color:var(--color-text);
+  box-shadow:var(--shadow-lg);
+}
+.join-preview:popover-open{ display:flex; flex-direction:column; gap:var(--space-3); }
+.join-preview::backdrop{ background:color-mix(in srgb, var(--color-backdrop) 55%, transparent); }
+.join-preview__close{
+  align-self:flex-start; margin-top:var(--space-2);
+  min-height:48px; padding:var(--space-3) var(--space-5);
+  border:2px solid var(--color-border-secondary); border-radius:var(--radius-full);
+  background:transparent; color:var(--color-accent); cursor:pointer;
+}
+.join-preview__close:hover{ background:var(--color-accent-100); }
+
+/* ---------- unresolved destinations: text + visible marker, never a dead link ---------- */
+.pending em{ font-style:normal; font-weight:400; color:var(--color-text-tertiary); }
+
+/* ---------- header (Figma 352:7) ---------- */
+.site-header{
+  position:sticky; top:0; z-index:40;
+  background:var(--color-bg);
+  border-bottom:1px solid var(--color-divider);
+}
+.site-header__inner{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:var(--space-6);
+  padding-block:var(--space-4);
+}
+.site-header__brand{ flex:none; }
+.site-header__right{ display:flex; align-items:center; gap:var(--space-7); }
+.site-nav ul{ display:flex; align-items:center; gap:var(--space-6); padding:0; list-style:none; }
+.site-nav__link{
+  display:block; padding-block:var(--space-2);   /* 45px hit target */
+  color:var(--color-text); text-decoration:none; white-space:nowrap;
+}
+.site-nav__link:hover{
+  color:var(--color-accent);
+  text-decoration:underline; text-underline-offset:.25em; text-decoration-thickness:2px;
+}
+
+/* ---------- footer (Figma 366:2) ---------- */
+.site-footer{ background:var(--color-footer); color:var(--color-text-inverse); }
+.site-footer__body{
+  display:flex; flex-direction:column; gap:var(--space-7);
+  padding-block:var(--space-9) var(--space-8);
+}
+.site-footer__rule{ margin:0; border:0; height:1px; background:var(--color-border-secondary); }
+
+.footer-nav{
+  display:grid; grid-template-columns:repeat(4, minmax(0,1fr));
+  gap:var(--space-7) var(--space-5);       /* 4 × col-3, 24px gutter */
+}
+.footer-group{ display:flex; flex-direction:column; gap:var(--space-4); }
+.footer-group ul{ padding:0; list-style:none; }
+.footer-group address{ font-style:normal; }
+
+.footer-link{
+  display:block; padding-block:var(--space-3);   /* 44.8px rows */
+  color:inherit; text-decoration:none;
+}
+a.footer-link:hover,
+.footer-link--button:hover{
+  color:var(--color-accent-2-300);
+  text-decoration:underline; text-underline-offset:.25em;
+}
+.footer-link--button{
+  width:100%; margin:0; padding-inline:0;
+  border:0; background:none; text-align:left; cursor:pointer;
+}
+.site-footer .pending em{ color:var(--color-on-dark-muted); }
+
+.site-footer__legal{
+  background:var(--color-legal-band);
+  border-top:1px solid var(--color-border-secondary);
+}
+.site-footer__legal-inner{
+  display:grid; grid-template-columns:minmax(0,872fr) minmax(0,424fr);
+  gap:var(--space-5); padding-block:var(--space-6);
+}
+.site-footer__legal .t-caption{ color:var(--color-text-inverse); }
+.site-footer__credit{ text-align:right; }
+
+/* ---------- breakpoints: 1200 / 768 ---------- */
+@media (max-width:1199.98px){
+  /* No tablet/mobile header in Figma yet — nav moves to the footer only. */
+  .site-nav{ display:none; }
+  .footer-nav{ grid-template-columns:repeat(2, minmax(0,1fr)); }
+}
+@media (max-width:767.98px){
+  .site-header__brand img{ width:154px; height:auto; }
+  .btn-join{ padding-inline:var(--space-5); }
+  .footer-nav,
+  .site-footer__legal-inner{ grid-template-columns:minmax(0,1fr); }
+  .site-footer__body{ padding-block:var(--space-8); }
+  .site-footer__credit{ text-align:left; }
+}

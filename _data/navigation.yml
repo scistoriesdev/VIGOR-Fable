@@ -1,0 +1,57 @@
+# Header and footer navigation. Field names map 1:1 to the WordPress menus /
+# Carbon Fields the theme will use later.
+#
+# url:      in-page anchor or page path. Leave it out when the client has not
+#           supplied a destination — the item renders as text + "destination
+#           needed", never as a dead link.
+# join:     true = the Join the Study control (non-navigating in this preview).
+
+main:
+  - label: About
+    url: "#about"
+  - label: Study Details
+    url: "#details"
+  - label: Updates
+    url: "#updates"
+  - label: Contact
+    url: "#contact"
+
+footer:
+  - heading: About the study
+    id: about-the-study
+    items:
+      - label: Study overview
+        url: "#about"
+      - label: What’s involved
+        url: "#whats-involved"
+      - label: Our team
+        url: "#team"
+      - label: Project support
+        url: "#updates"
+  - heading: Take part
+    id: take-part
+    items:
+      - label: Join the Study
+        join: true
+      - label: Who can join
+        url: "#eligibility"
+      - label: Questions families ask
+        url: "#faq"
+      - label: Read the consent form       # consent form URL — needed from client
+  - heading: Contact the VIGOR team
+    id: contact-the-vigor-team
+    type: contact
+    address:                               # street address unverified — confirm with client
+      - VIGOR Study Team
+      - UMass Chan Medical School
+      - Department of Dermatology
+      - 364 Plantation Street
+      - Worcester, MA 01605
+    email: vigor@umassmed.edu
+    # phone: omitted until the client supplies a real number (was 508-555-1234, a fictional exchange)
+  - heading: Participant information
+    id: participant-information
+    items:
+      - label: Privacy and data use        # privacy / data-use page — needed from client
+      - label: Participant rights and IRB review   # IRB page — needed from client
+      - label: Accessibility               # accessibility statement — needed from client

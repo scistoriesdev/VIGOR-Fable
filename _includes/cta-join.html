@@ -1,0 +1,15 @@
+{%- comment -%}
+  Join the Study — one include for header, hero, mid-page and footer.
+    size:    "m" (default) | "l" (wide CTA, 560 × 66)
+    variant: "footer" adds the 2px keyline (orange is 2.27:1 on the footer blue)
+             "link"   renders as a footer nav link instead of a pill
+  PREVIEW: never navigates. It opens the #join-preview popover (in the layout)
+  instead of the live enrolment endpoint. In the WordPress theme this becomes
+  an <a> to the enrolment URL from Carbon Fields.
+{%- endcomment -%}
+{%- assign size = include.size | default: "m" -%}
+{%- if include.variant == "link" -%}
+<button type="button" class="footer-link footer-link--button t-ui-small" popovertarget="join-preview">Join the Study</button>
+{%- else -%}
+<button type="button" class="btn-join t-ui-strong{% if size == 'l' %} btn-join--l{% endif %}{% if include.variant == 'footer' %} btn-join--footer{% endif %}" popovertarget="join-preview">Join the Study</button>
+{%- endif -%}

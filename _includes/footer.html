@@ -1,0 +1,44 @@
+{%- comment -%}
+  Figma 366:2 · WP footer.php
+  Reversed logo: the dark wordmark is 1.56:1 on the footer blue.
+  Rules use --color-border-secondary; --color-divider is 1.08:1 here.
+{%- endcomment -%}
+<footer id="contact" class="site-footer" role="contentinfo">
+  <div class="container site-footer__body">
+    <div class="site-footer__identity">
+      <img src="{{ '/assets/img/vigor-logo-reversed.svg' | relative_url }}" width="205" height="80" alt="VIGOR Study">
+    </div>
+
+    <hr class="site-footer__rule">
+
+    <div class="footer-nav">
+      {%- for group in site.data.navigation.footer %}
+      {%- if group.type == "contact" %}
+      <div class="footer-group">
+        <h2 id="fn-{{ group.id }}" class="t-ui-small t-ui-small--heading">{{ group.heading }}</h2>
+        <address class="t-body">
+          {%- for line in group.address %}{{ line }}{% unless forloop.last %}<br>{% endunless %}{% endfor -%}
+        </address>
+        <a class="footer-link t-ui-small" href="mailto:{{ group.email }}">{{ group.email }}</a>
+      </div>
+      {%- else %}
+      <nav class="footer-group" aria-labelledby="fn-{{ group.id }}">
+        <h2 id="fn-{{ group.id }}" class="t-ui-small t-ui-small--heading">{{ group.heading }}</h2>
+        <ul>
+          {%- for item in group.items %}
+          <li>{% if item.join %}{% include cta-join.html variant="link" %}{% else %}{% include nav-link.html item=item class="footer-link t-ui-small" %}{% endif %}</li>
+          {%- endfor %}
+        </ul>
+      </nav>
+      {%- endif %}
+      {%- endfor %}
+    </div>
+  </div>
+
+  <div class="site-footer__legal">
+    <div class="container site-footer__legal-inner">
+      <p class="t-caption">VIGOR is an observational research study of UMass Chan Medical School, reviewed and approved by the UMass Chan Institutional Review Board. IRB protocol <span class="pending"><em>— number needed</em></span>.</p>
+      <p class="t-caption site-footer__credit">© {{ site.time | date: "%Y" }} UMass Chan Medical School<br>Website by SciStories</p>
+    </div>
+  </div>
+</footer>
