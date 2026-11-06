@@ -1,0 +1,18 @@
+{%- comment -%}
+  Figma 352:77 / 352:84 · WP template-parts/team-grid.php
+  3 × col-4 (424). At 11+ people switch back to 4 × col-3 (see handoff).
+{%- endcomment -%}
+<section id="team" class="section-band" aria-labelledby="team-h">
+  <div class="section container stack-7">
+    <h2 id="team-h" class="t-heading-section">Our team</h2>
+    <div class="row-6-6">
+      <p class="t-body text-secondary">For more than 15 years, our team has worked to better understand vitiligo and improve care for people living with it. Our research helped support the first FDA-approved treatment for vitiligo, has informed ongoing clinical trials, and continues to shape how vitiligo is studied and treated. Through research, patient care, advocacy, and training, our goal is to improve the lives of people with vitiligo while working toward better treatments and, ultimately, a cure.</p>
+    </div>
+    <ul class="team-grid">
+      {%- for person in site.data.team %}
+      <li>{% include team-card.html person=person index=forloop.index0 %}</li>
+      {%- endfor %}
+    </ul>
+    <p class="t-caption">Role for Priscilla Romano is summarised from the bio — the live site states no job title. <span class="pending"><em>[CONFIRM]</em></span></p>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+# FAQ — Figma 353:6. Questions from Figma; answers from the Ver2 prototype
+# (the first matches Figma verbatim).
+# pending: something in the answer the client must confirm — rendered as a
+# visible marker, not hidden in the copy.
+
+- q: "Is this a treatment study?"
+  a: "No. VIGOR is an observational study, which means we watch and learn rather than test a drug or therapy. You keep seeing your own doctor and using whatever treatment you and they choose. What we learn from your samples and surveys will help future treatments and, we hope, ways to prevent vitiligo."
+
+- q: "Does it cost anything?"
+  a: "No. There is no cost to join. We mail every kit to your door with prepaid return shipping, and the VIGOR app is free. You will receive a small thank-you payment after each completed sample kit."
+  pending: "payment amount to confirm"
+
+- q: "Do I have to travel or visit a clinic?"
+  a: "No. Everything happens at home. You enroll on your phone, collect saliva, skin and blood samples yourself using simple kits with step-by-step video instructions, and drop the box in the mail. If you ever get stuck, a study coordinator is a phone call away."
+
+- q: "What happens to my samples and my genetic data?"
+  a: "Samples are stored securely at UMass Chan and labeled with a code, not your name. Your genetic data is kept on protected servers and shared with other researchers only in de-identified form. We will never sell your data or give it to insurers or employers. You can ask us to destroy your samples at any time."
+
+- q: "Can my child participate?"
+  a: "Yes. Children age 6 and older with vitiligo can join, with a parent or guardian enrolling on their behalf. Children who do not have vitiligo but have a parent or sibling who does are also welcome, and their participation is especially valuable. We explain everything in language kids understand, and they can say no."
+
+- q: "What if I can’t keep up with it for five years?"
+  a: "That is okay. Life changes, and you can pause or leave the study at any time with no penalty. Even a year or two of surveys and samples is useful to us. If you miss a check-in we will send a gentle reminder, not a demand, and your coordinator can help you catch up."

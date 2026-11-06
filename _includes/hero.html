@@ -1,0 +1,14 @@
+{%- comment -%} Figma 352:23 · WP template-parts/hero.php {%- endcomment -%}
+<section class="hero container" aria-labelledby="hero-h">
+  <div class="hero__card" style="--hero-img:url('{{ '/assets/img/hero.jpg' | relative_url }}')">
+    <div class="hero__copy">
+      <span class="keyline" aria-hidden="true"></span>
+      <h1 id="hero-h" class="t-display">Help us find what triggers vitiligo — from home.</h1>
+      <p class="t-lead hero__lead">A five-year, fully remote NIH study of what triggers vitiligo — for people who have it, and the family members who don’t.</p>
+      <div class="hero__actions">
+        {% include cta-join.html %}
+        <a class="quiet-link t-ui-strong" href="#whats-involved">See what’s involved</a>
+      </div>
+    </div>
+  </div>
+</section>

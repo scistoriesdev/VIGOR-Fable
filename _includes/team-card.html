@@ -1,0 +1,20 @@
+{%- comment -%}
+  One team tile · WP template-parts/team-card.php
+  A <button>, never a div: focus returns here when the bio modal closes.
+  Initials render ONLY when there is no portrait.
+{%- endcomment -%}
+{%- assign p = include.person -%}
+<button type="button" class="team-card" data-index="{{ include.index }}" aria-haspopup="dialog">
+  <span class="team-card__portrait">
+    {%- if p.portrait != "" and p.portrait -%}
+    <img src="{{ p.portrait | relative_url }}" width="424" height="424" alt="" loading="lazy" decoding="async">
+    {%- else -%}
+    <span class="team-card__initials" aria-hidden="true">{{ p.initials }}</span>
+    {%- endif -%}
+  </span>
+  <span class="team-card__name t-ui-strong">{{ p.name }}</span>
+  {%- if p.role != "" and p.role %}
+  <span class="team-card__role t-caption">{{ p.role }}</span>
+  {%- endif %}
+  <span class="visually-hidden">— read bio</span>
+</button>

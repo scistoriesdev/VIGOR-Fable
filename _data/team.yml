@@ -1,0 +1,68 @@
+# Team roster — Figma 352:84, in display order.
+# Field names mirror the Carbon Fields sub-fields:
+#   name, role, institution, initials, portrait, bio
+# Leave a field empty rather than guess. Empty role/institution are omitted;
+# an empty bio renders "bio needed" in the modal. Bios are first person,
+# the client's own copy — never rewrite to third person.
+# Portraits are 848px squares cropped to the Figma framing.
+
+- name: "Manuel Garber, PhD"
+  role: "Co-lead investigator"
+  institution: ""
+  initials: "MG"
+  portrait: "/assets/img/team/garber.jpg"
+  bio: ""
+
+- name: "John E. Harris, MD, PhD"
+  role: "Co-lead investigator"
+  institution: "UMass Chan Medical School"
+  initials: "JH"
+  portrait: "/assets/img/team/harris.jpg"
+  bio: >
+    As a co-lead investigator of this study, a board-certified dermatologist,
+    and a physician-scientist, my career goal is to translate basic research
+    findings into clinical applications that benefit individuals with vitiligo.
+    I have received the AAD Marion B. Sulzberger Award for conducting basic
+    science research that has changed the practice of medicine.
+
+- name: "Todd Pearson, PhD"
+  role: "Assistant professor, Dermatology"
+  institution: ""
+  initials: "TP"
+  portrait: "/assets/img/team/pearson.jpg"
+  bio: ""
+
+- name: "Priscilla Romano, MD"
+  role: "Study design and oversight"   # [CONFIRM] derived from bio text, not stated on the live site
+  institution: ""
+  initials: "PR"
+  portrait: "/assets/img/team/romano.jpg"
+  bio: ""
+
+- name: "Thomas Jacob"
+  role: ""
+  institution: ""
+  initials: "TJ"
+  portrait: "/assets/img/team/jacob.jpg"
+  bio: ""
+
+- name: "Jane Vongvirath, BS"
+  role: "Clinical research coordinator"
+  institution: ""
+  initials: "JV"
+  portrait: "/assets/img/team/vongvirath.jpg"
+  bio: ""
+
+- name: "Anu Atukuri, B. Pharm"
+  role: "Regulatory coordinator"
+  institution: ""
+  initials: "AA"
+  portrait: "/assets/img/team/atukuri.jpg"
+  bio: ""
+
+- name: "Laura Lajoie"
+  role: ""
+  institution: ""
+  initials: "LL"
+  portrait: "/assets/img/team/lajoie.jpg"
+  bio: ""
