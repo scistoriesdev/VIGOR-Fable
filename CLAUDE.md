@@ -26,7 +26,8 @@ Design source of truth: Figma file `PmylKOrt0FztuAARUigBVO`. Read it directly th
 - Team tiles are `<button>`, never `<div>`. Focus must return to the tile when the modal closes.
 - Only the nine type styles in `vigor-tokens.css` exist. Three weights: Source Serif 600, Figtree 400, Figtree 700. Don't add a tenth style or a fourth weight.
 - Only the nine spacing steps exist (`--space-1` … `--space-9`). The 60px side margin is grid geometry, not a token.
-- Never substitute `#` or `javascript:void(0)` for a missing destination. Render it as non-link text with a visible marker.
+- Never substitute `#` or `javascript:void(0)` for a missing destination. Render it as plain non-link text — **no visible marker**.
+- No review notes on the page: no "destination needed", `[CONFIRM]`, "bio needed" or Figma design-note captions (photo briefs, "official logos replace…"). Missing content is left out or shown as plain text; track gaps in YAML comments and in the end-of-task report. This overrides rule 3 in `docs/VIGOR-STATIC-BUILD.md`. The preview band and the Join "enrolment is switched off" popover are safeguards, not notes — keep them.
 
 ## Build order
 
@@ -41,4 +42,4 @@ Design source of truth: Figma file `PmylKOrt0FztuAARUigBVO`. Read it directly th
 
 Nine team members confirmed from the live site; two more coming — at 11 the grid moves from 3 × col-4 back to 4 × col-3. Bios are first person, client's own copy.
 
-Still missing from the client, all rendering as "destination needed": consent form URL, privacy/data-use page, participant-rights/IRB page, accessibility statement, real phone number, verified street address, NIH grant number, IRB protocol number.
+Still missing from the client (rendered as plain text or omitted — never with a visible marker): consent form URL, privacy/data-use page, participant-rights/IRB page, accessibility statement, real phone number, verified street address, NIH grant number, IRB protocol number.
