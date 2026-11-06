@@ -87,8 +87,6 @@ a{ color:var(--color-accent); }
 }
 .join-preview__close:hover{ background:var(--color-accent-100); }
 
-/* ---------- unresolved destinations: text + visible marker, never a dead link ---------- */
-.pending em{ font-style:normal; font-weight:400; color:var(--color-text-tertiary); }
 
 /* ---------- header (Figma 352:7) ---------- */
 .site-header{
@@ -142,7 +140,6 @@ a.footer-link:hover,
   width:100%; margin:0; padding-inline:0;
   border:0; background:none; text-align:left; cursor:pointer;
 }
-.site-footer .pending em{ color:var(--color-on-dark-muted); }
 
 .site-footer__legal{
   background:var(--color-legal-band);

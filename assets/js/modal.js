@@ -45,13 +45,11 @@
       }
 
       els.bio.textContent = '';
+      els.bio.hidden = !p.bio;
       if (p.bio) {
         var para = document.createElement('p');
         para.textContent = p.bio;
         els.bio.appendChild(para);
-      } else {
-        // Missing client copy is shown, not hidden.
-        els.bio.innerHTML = '<p class="pending"><em>Bio — needed from the client.</em></p>';
       }
     }
 

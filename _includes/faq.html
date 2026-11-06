@@ -19,7 +19,7 @@
           </button>
         </h3>
         <div class="faq__panel" id="faq-p{{ forloop.index }}" role="region" aria-labelledby="faq-b{{ forloop.index }}">
-          <p class="t-body">{{ item.a }}{% if item.pending %} <span class="pending"><em>— {{ item.pending }}</em></span>{% endif %}</p>
+          <p class="t-body">{{ item.a }}</p>
         </div>
       </div>
       {%- endfor %}

@@ -1,7 +1,7 @@
 {%- comment -%}
-  One navigation item. No url → text plus a visible "destination needed"
-  marker, never a dead link or "#". In-page anchors pass through untouched;
-  paths go through relative_url so they survive the baseurl.
+  One navigation item. No url → plain text, never a dead link or "#".
+  In-page anchors pass through untouched; paths go through relative_url
+  so they survive the baseurl.
 {%- endcomment -%}
 {%- assign item = include.item -%}
 {%- if item.url -%}
@@ -9,5 +9,5 @@
   {%- if first == "#" or item.url contains "://" or item.url contains "mailto:" -%}{%- assign href = item.url -%}{%- else -%}{%- assign href = item.url | relative_url -%}{%- endif -%}
 <a class="{{ include.class }}" href="{{ href }}">{{ item.label }}</a>
 {%- else -%}
-<span class="{{ include.class }} pending">{{ item.label }} <em>— destination needed</em></span>
+<span class="{{ include.class }}">{{ item.label }}</span>
 {%- endif -%}

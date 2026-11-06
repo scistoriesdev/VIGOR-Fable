@@ -2,7 +2,7 @@
 # Field names mirror the Carbon Fields sub-fields:
 #   name, role, institution, initials, portrait, bio
 # Leave a field empty rather than guess. Empty role/institution are omitted;
-# an empty bio renders "bio needed" in the modal. Bios are first person,
+# an empty bio is omitted from the modal. Bios are first person,
 # the client's own copy — never rewrite to third person.
 # Portraits are 848px squares cropped to the Figma framing.
 
