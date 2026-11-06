@@ -162,6 +162,7 @@ a.footer-link:hover,
   .footer-nav{ grid-template-columns:repeat(2, minmax(0,1fr)); }
 }
 @media (max-width:767.98px){
+  .site-header__inner{ gap:var(--space-4); }
   .site-header__brand img{ width:154px; height:auto; }
   .btn-join{ padding-inline:var(--space-5); }
   .footer-nav,
