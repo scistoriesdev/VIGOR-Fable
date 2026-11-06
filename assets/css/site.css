@@ -21,7 +21,7 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 
-h1,h2,h3,h4,p,ul,ol,figure{ margin:0; }
+h1,h2,h3,h4,p,ul,ol,dl,dd,figure{ margin:0; }
 h1,h2,h3{ text-wrap:balance; }
 img,svg{ display:block; max-width:100%; height:auto; }
 a{ color:var(--color-accent); }
