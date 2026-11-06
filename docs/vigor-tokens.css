@@ -1,0 +1,163 @@
+/* ============================================================
+   VIGOR design tokens — revision 2
+   Generated from Figma file PmylKOrt0FztuAARUigBVO
+   Replaces the :root block in VIGOR_Study_Ver2.html
+   ============================================================ */
+
+:root{
+  /* ---------- primitives (don't reference these directly) ---------- */
+  --sand-50:#FAF7F2;  --sand-100:#EDE6DA;  --white:#FFFFFF;
+  --navy-700:#0A2440; --navy-800:#0A1832;  --navy-900:#14213D; --navy-950:#06152C;
+  --blue-100:#E9EFFA; --blue-200:#D3DFF5;  --blue-400:#5E82C4;
+  --blue-500:#003A96; --blue-600:#002F7A;  --blue-700:#00276B;
+  --teal-100:#E3F4F5; --teal-200:#C4E8EA;  --teal-300:#9ED9DC; --teal-500:#009CA6;
+  --teal-600:#00828B; --teal-700:#00666E;  --teal-800:#004B51;
+  --teal-panel-from:#0B5C6B; --teal-panel-to:#08324A;
+  --orange-500:#E8702F; --orange-600:#D9622B; --orange-700:#C4541F; --orange-800:#A84414;
+  --slate-500:#626A7B; --slate-600:#475065;
+  --tint-blue-on-dark:#DCE6F2; --tint-teal-on-dark:#E6F3F6;
+
+  /* ---------- surfaces ---------- */
+  --color-bg:              var(--sand-50);
+  --color-surface:         var(--sand-100);
+  --color-card:            var(--white);   /* CHANGED: was var(--color-bg) — identical to the page,
+                                              so cards had no surface and the shadow read as a smudge */
+  --color-footer:          var(--blue-500);
+  --color-legal-band:      var(--blue-700);
+  --color-scrim:           var(--navy-950);
+  --color-photo-dark:      var(--navy-700);
+  --color-backdrop:        var(--navy-800);
+  --color-accent-100:      var(--blue-100);
+  --color-accent-200:      var(--blue-200);
+  --color-accent-2-100:    var(--teal-100);
+  --color-accent-2-200:    var(--teal-200);
+
+  /* ---------- text ---------- */
+  --color-text:            var(--navy-900);
+  --color-text-secondary:  var(--slate-600);   /* was navy @78% */
+  --color-text-tertiary:   var(--slate-500);   /* CHANGED: was navy @60% = 4.21:1, failed AA */
+  --color-accent:          var(--blue-500);
+  --color-accent-2-700:    var(--teal-700);
+  --color-accent-2-800:    var(--teal-800);
+  --color-text-inverse:    var(--sand-50);
+  --color-text-on-dark:    var(--white);
+  --color-on-dark-muted:   var(--tint-blue-on-dark);
+  --color-on-dark-teal:    var(--tint-teal-on-dark);
+
+  /* ---------- actions ---------- */
+  --color-join:            var(--orange-700); /* CHANGED: was #E8702F. White label was 3.09:1.
+                                                 18px bold is under the 18.66px large-text threshold,
+                                                 so it needs 4.5:1. Now 4.53:1. */
+  --color-join-hover:      var(--orange-800); /* CHANGED: was #D9622B (3.66:1). Now 6.00:1. */
+  --color-join-label:      var(--white);      /* MUST be pure white. --color-text-inverse (#FAF7F2)
+                                                 on the orange is 4.24:1 and FAILS. */
+
+  /* ---------- borders ---------- */
+  --color-divider:         color-mix(in srgb, var(--navy-900) 16%, transparent);
+  --color-border-secondary:var(--blue-400);   /* CHANGED: was #D3DFF5 = 1.26:1, below the 3:1
+                                                 needed for a control boundary. Now 3.60:1. */
+  --color-focus:           var(--teal-600);   /* CHANGED: was #009CA6 (2.69:1 on the surface band).
+                                                 LIGHT GROUNDS ONLY — 2.23:1 on the footer. */
+  --color-focus-inverse:   var(--sand-50);    /* dark grounds: footer, hero scrim, modal backdrop */
+
+  /* ---------- decorative (exempt from contrast rules) ---------- */
+  --color-accent-2:        var(--teal-500);   /* keyline, list dots, brandmark dot */
+  --color-accent-2-300:    var(--teal-300);   /* footer link hover — 6.56:1, real text, passes */
+
+  /* ---------- spacing: 9 steps, 4px grid, Bootstrap-compatible ---------- */
+  --space-1:4px;   /* icon nudges                      */
+  --space-2:8px;   /* tight label stacks        · g-2   */
+  --space-3:12px;  /* list gaps, brand lockup          */
+  --space-4:16px;  /* card internals, btn y     · g-3   */
+  --space-5:24px;  /* panel padding, grid gutter · g-4  */
+  --space-6:32px;  /* card padding, nav gap, btn x     */
+  --space-7:48px;  /* heading→content, col gutter · g-5 */
+  --space-8:64px;  /* hero padding, footer y           */
+  --space-9:96px;  /* section padding-block            */
+
+  /* ---------- radius ---------- */
+  --radius-sm:10px; --radius-md:16px; --radius-lg:28px; --radius-full:999px;
+
+  /* ---------- elevation ---------- */
+  --shadow-md:0 3px 10px color-mix(in srgb, var(--navy-900) 14%, transparent);
+  --shadow-lg:0 16px 40px color-mix(in srgb, var(--navy-900) 22%, transparent);
+
+  /* ---------- type families ---------- */
+  --font-heading:"Source Serif 4",Georgia,serif;
+  --font-body:"Figtree",system-ui,-apple-system,sans-serif;
+
+  color-scheme:light;
+}
+
+/* ============================================================
+   TYPE RAMP — 9 styles. Seven sizes, three weights.
+   Longhand on purpose: the `font` shorthand does NOT reset
+   letter-spacing, which is how -.01em leaked onto the FAQ
+   trigger through `font:inherit` in the original build.
+   ============================================================ */
+
+.t-display{
+  font-family:var(--font-heading); font-weight:600;
+  font-size:clamp(36px,5vw,60px); line-height:1.05; letter-spacing:-.02em;
+}
+.t-heading-section{
+  font-family:var(--font-heading); font-weight:600;
+  font-size:clamp(28px,3vw,36px); line-height:1.15; letter-spacing:-.015em;
+  color:var(--color-accent);
+}
+.t-heading-card{
+  font-family:var(--font-heading); font-weight:600;
+  font-size:24px; line-height:1.3; letter-spacing:-.01em;
+  color:var(--color-accent);            /* card headings GAIN the blue — they were body colour */
+}
+.t-quote{
+  font-family:var(--font-heading); font-weight:600; font-style:italic;
+  font-size:clamp(24px,2.6vw,30px); line-height:1.25; letter-spacing:-.01em;
+  color:var(--color-accent-2-700);
+}
+.t-lead{
+  font-family:var(--font-body); font-weight:400;
+  font-size:clamp(19px,1.6vw,22px); line-height:1.5; letter-spacing:0;
+}
+.t-body{
+  font-family:var(--font-body); font-weight:400;
+  font-size:18px; line-height:1.6; letter-spacing:0;
+}
+.t-ui-strong{
+  font-family:var(--font-body); font-weight:700;
+  font-size:18px; line-height:1.35; letter-spacing:0;
+}
+.t-ui-small{
+  font-family:var(--font-body); font-weight:700;
+  font-size:16px; line-height:1.3; letter-spacing:0;
+}
+.t-caption{
+  font-family:var(--font-body); font-weight:400;
+  font-size:16px; line-height:1.5; letter-spacing:0;
+  color:var(--color-text-tertiary);
+}
+
+/* Footer column headings: UI/Small is shared by nav links AND footer headers,
+   so uppercase + tracking separates them without a 10th style or a 4th weight. */
+.t-ui-small--heading{ text-transform:uppercase; letter-spacing:.08em; }
+
+/* ============================================================
+   FOCUS — the ring must contrast with whatever it sits on.
+   One token cannot serve both grounds.
+   ============================================================ */
+:focus-visible{ outline:3px solid var(--color-focus); outline-offset:3px; }
+
+footer :focus-visible,
+.banner-photo :focus-visible,
+.backdrop :focus-visible{
+  outline-color:var(--color-focus-inverse);   /* teal is 2.23:1 on the footer blue */
+}
+
+/* ============================================================
+   FONT LOADING — replaces the <link> in the original head.
+   Figtree 600 and 800 are cut. Source Serif needs an ital axis
+   or .t-quote renders as a synthesised oblique.
+   ============================================================ */
+/*
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,600&display=swap">
+*/

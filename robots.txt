@@ -1,0 +1,3 @@
+# Client design preview — keep out of all indexes.
+User-agent: *
+Disallow: /

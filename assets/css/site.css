@@ -1,0 +1,54 @@
+/* ============================================================
+   VIGOR site styles. Tokens live in tokens.css — this file only
+   references them. Type comes from the .t-* ramp classes; there is
+   deliberately no blanket h1,h2,h3 rule (letter-spacing leaked
+   through font:inherit in the prototype).
+   Breakpoints: 1200 / 768, matching the design.
+   ============================================================ */
+
+*,*::before,*::after{ box-sizing:border-box; }
+
+html{ -webkit-text-size-adjust:100%; }
+
+body{
+  margin:0;
+  background:var(--color-bg);
+  color:var(--color-text);
+  font-family:var(--font-body); font-weight:400;
+  font-size:18px; line-height:1.6;
+  text-wrap:pretty;
+  overflow-x:clip;
+  -webkit-font-smoothing:antialiased;
+}
+
+h1,h2,h3,h4,p,ul,ol,figure{ margin:0; }
+h1,h2,h3{ text-wrap:balance; }
+img,svg{ display:block; max-width:100%; height:auto; }
+a{ color:var(--color-accent); }
+
+/* Sticky header must not cover in-page targets */
+[id]{ scroll-margin-top:96px; }
+
+/* ---------- grid geometry: 1320 container, 60px side margin ---------- */
+.container{
+  width:100%;
+  max-width:calc(1320px + 2 * 60px);
+  margin-inline:auto;
+  padding-inline:60px;            /* grid geometry, not a spacing token */
+}
+@media (max-width:1199.98px){ .container{ padding-inline:var(--space-6); } }
+@media (max-width:767.98px) { .container{ padding-inline:var(--space-4); } }
+
+.visually-hidden{
+  position:absolute!important; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+}
+
+/* ---------- preview band: persistent, not dismissible ---------- */
+.preview-band{
+  background:var(--color-surface);
+  color:var(--color-text);
+  padding:var(--space-3) var(--space-5);
+  text-align:center;
+}
+

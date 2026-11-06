@@ -1,0 +1,6 @@
+title: VIGOR Study
+description: A five-year, fully remote NIH study of what triggers vitiligo.
+baseurl: "/VIGOR-Fable"
+url: "https://scistoriesdev.github.io"
+sass: { style: compressed }
+exclude: [README.md, LICENSE, CLAUDE.md, docs/]   # docs/ is reference material — never publish it
