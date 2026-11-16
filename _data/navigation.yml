@@ -26,7 +26,7 @@ footer:
         url: "#whats-involved"
       - label: Our team
         url: "#team"
-      - label: Project support
+      - label: Funding & Support
         url: "#updates"
   - heading: Take part
     id: take-part
@@ -37,21 +37,18 @@ footer:
         url: "#eligibility"
       - label: Questions families ask
         url: "#faq"
-      - label: Read the consent form       # consent form URL — needed from client
+      # - label: Read the consent form     # removed until the client supplies the consent form URL
+  - heading: Participant information
+    id: participant-information
+    # Heading only until the client supplies destinations for:
+    #   Privacy and data use · Participant rights and IRB review · Accessibility
+    items: []
   - heading: Contact the VIGOR team
     id: contact-the-vigor-team
     type: contact
-    address:                               # street address unverified — confirm with client
-      - VIGOR Study Team
-      - UMass Chan Medical School
-      - Department of Dermatology
-      - 364 Plantation Street
-      - Worcester, MA 01605
-    email: vigor@umassmed.edu
-    # phone: omitted until the client supplies a real number (was 508-555-1234, a fictional exchange)
-  - heading: Participant information
-    id: participant-information
-    items:
-      - label: Privacy and data use        # privacy / data-use page — needed from client
-      - label: Participant rights and IRB review   # IRB page — needed from client
-      - label: Accessibility               # accessibility statement — needed from client
+    # Heading only until the client confirms the contact details. The live site's
+    # UMass Chan details are NOT to be presented as confirmed (manager, 2026-11-15):
+    #   address: VIGOR Study Team / UMass Chan Medical School / Department of
+    #            Dermatology / 364 Plantation Street / Worcester, MA 01605
+    #   email:   vigor@umassmed.edu
+    #   phone:   none supplied (508-555-1234 was fictional)

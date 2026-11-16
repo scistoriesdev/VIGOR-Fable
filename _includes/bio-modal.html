@@ -26,9 +26,16 @@
     </div>
   </div>
 </dialog>
+{%- comment -%} Only people WITH a bio. Order and index must match the team-grid cards. {%- endcomment -%}
 <script type="application/json" id="team-data">
-[{%- for p in site.data.team -%}
-{"name":{{ p.name | jsonify }},"role":{{ p.role | default: "" | jsonify }},"institution":{{ p.institution | default: "" | jsonify }},"initials":{{ p.initials | jsonify }},"portrait":{% if p.portrait and p.portrait != "" %}{{ p.portrait | relative_url | jsonify }}{% else %}""{% endif %},"bio":{{ p.bio | default: "" | strip | jsonify }}}{% unless forloop.last %},{% endunless %}
+[{%- assign n = 0 -%}
+{%- for p in site.data.team -%}
+{%- assign bio = p.bio | default: "" | strip -%}
+{%- if bio != "" -%}
+{%- if n > 0 %},{% endif -%}
+{"name":{{ p.name | jsonify }},"role":{{ p.role | default: "" | jsonify }},"institution":{{ p.institution | default: "" | jsonify }},"initials":{{ p.initials | jsonify }},"portrait":{% if p.portrait and p.portrait != "" %}{{ p.portrait | relative_url | jsonify }}{% else %}""{% endif %},"bio":{{ bio | jsonify }}}
+{%- assign n = n | plus: 1 -%}
+{%- endif -%}
 {%- endfor -%}]
 </script>
 <script src="{{ '/assets/js/modal.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>

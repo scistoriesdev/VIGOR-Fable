@@ -4,13 +4,17 @@
 {%- endcomment -%}
 <section id="team" class="section-band" aria-labelledby="team-h">
   <div class="section container stack-7">
-    <h2 id="team-h" class="t-heading-section">Our team</h2>
+    <h2 id="team-h" class="t-heading-section">Who We Are</h2>
     <div class="row-6-6">
       <p class="t-body text-secondary">For more than 15 years, our team has worked to better understand vitiligo and improve care for people living with it. Our research helped support the first FDA-approved treatment for vitiligo, has informed ongoing clinical trials, and continues to shape how vitiligo is studied and treated. Through research, patient care, advocacy, and training, our goal is to improve the lives of people with vitiligo while working toward better treatments and, ultimately, a cure.</p>
     </div>
     <ul class="team-grid">
+      {%- comment -%} bio_i indexes only people WITH a bio — must match #team-data in bio-modal.html {%- endcomment -%}
+      {%- assign bio_i = 0 %}
       {%- for person in site.data.team %}
-      <li>{% include team-card.html person=person index=forloop.index0 %}</li>
+      {%- assign bio = person.bio | default: "" | strip %}
+      <li>{% include team-card.html person=person index=bio_i %}</li>
+      {%- if bio != "" %}{% assign bio_i = bio_i | plus: 1 %}{% endif %}
       {%- endfor %}
     </ul>
   </div>

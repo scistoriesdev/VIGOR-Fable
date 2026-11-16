@@ -11,7 +11,13 @@
   institution: ""
   initials: "MG"
   portrait: "/assets/img/team/garber.jpg"
-  bio: ""
+  bio: >
+    As a co-lead investigator of this study, I am a computational biologist
+    with a strong background in mathematics and a passion for applying new
+    technologies to the study of immune responses. My interest in biology began
+    with the sequencing of the human genome and has since focused on
+    identifying the molecular signatures associated with different immune
+    states.
 
 - name: "John E. Harris, MD, PhD"
   role: "Co-lead investigator"
@@ -30,14 +36,23 @@
   institution: ""
   initials: "TP"
   portrait: "/assets/img/team/pearson.jpg"
-  bio: ""
+  bio: >
+    I am an assistant professor in the department of Dermatology at UMass Chan
+    Medical School. I received my Ph.D. in Immunology and Virology from the
+    Morningside Graduate School of Biomedical Sciences at UMass Chan Medical
+    School and have had a lifelong focus on understanding the genetic and
+    cellular mechanisms that cause autoimmune diseases.
 
 - name: "Priscilla Romano, MD"
   role: "Study design and oversight"   # [CONFIRM] derived from bio text, not stated on the live site
   institution: ""
   initials: "PR"
   portrait: "/assets/img/team/romano.jpg"
-  bio: ""
+  bio: >
+    I am a physician from Brazil with a deep passion for dermatology. I am
+    dedicated to enhancing patient care and am responsible for the design,
+    organization, regulatory requirements, and oversight of the study, ensuring
+    the highest standard of care for all patients involved.
 
 - name: "Thomas Jacob"
   role: ""
@@ -51,14 +66,19 @@
   institution: ""
   initials: "JV"
   portrait: "/assets/img/team/vongvirath.jpg"
-  bio: ""
+  bio: >
+    In my role as a Clinical Research Coordinator, I work directly with
+    participants and provide guidance throughout the entire study process.
 
 - name: "Anu Atukuri, B. Pharm"
   role: "Regulatory coordinator"
   institution: ""
   initials: "AA"
   portrait: "/assets/img/team/atukuri.jpg"
-  bio: ""
+  bio: >
+    As the Regulatory Coordinator, I am responsible for ensuring smooth
+    operations and compliance with all regulations, as well as maintaining
+    necessary documentation records for the VIGOR study.
 
 - name: "Laura Lajoie"
   role: ""
