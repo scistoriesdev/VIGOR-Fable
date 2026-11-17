@@ -1,0 +1,10 @@
+{%- comment -%} Updates · page head · WP page-updates.php — same pattern as Study Details {%- endcomment -%}
+{%- assign b = site.data.updates -%}
+<section class="page-head container" aria-labelledby="updates-h">
+  <div class="stack-4">
+    <span class="keyline" aria-hidden="true"></span>
+    <h1 id="updates-h" class="t-display">{{ b.intro_title }}</h1>
+    <p class="t-lead text-secondary page-head__lead">{{ b.intro_sub }}</p>
+    <p class="t-body page-head__lead">{{ b.intro | strip }}</p>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+{%- comment -%}
+  Study timeline · WP template-parts/timeline.php
+  Rebuilt as HTML from the live site's graphic — same milestones, same order,
+  same wording, labels alternating above/below the line. Reads as a list on
+  phones. --col places each milestone in its grid column on wide screens.
+{%- endcomment -%}
+{%- assign sd = site.data.study_details -%}
+<section id="timeline" class="section container stack-7" aria-labelledby="timeline-h">
+  <h2 id="timeline-h" class="t-heading-section">{{ sd.timeline_heading }}</h2>
+  <ol class="timeline">
+    {%- for step in sd.timeline %}
+    <li class="timeline__item" style="--col:{{ forloop.index }}">
+      <span class="timeline__dot" aria-hidden="true"></span>
+      <span class="timeline__label t-ui-small">{{ step }}</span>
+    </li>
+    {%- endfor %}
+  </ol>
+  <script>
+    /* Draw-on: hide the parts now (before first paint), reveal when in view.
+       Skipped for reduced motion or without IntersectionObserver — the
+       timeline then renders complete. */
+    (function () {
+      var tl = document.currentScript.previousElementSibling;
+      if (!tl || !('IntersectionObserver' in window)) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      tl.classList.add('timeline--animate');
+      var io = new IntersectionObserver(function (entries) {
+        if (entries.some(function (e) { return e.isIntersecting; })) { tl.classList.add('is-drawn'); io.disconnect(); }
+      }, { threshold: 0.4 });
+      io.observe(tl);
+    })();
+  </script>
+</section>

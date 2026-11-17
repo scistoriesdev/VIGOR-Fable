@@ -1,0 +1,30 @@
+{%- comment -%}
+  One Updates post card · WP template-parts/post-card.php
+  With `url`: the title is the link and the whole card is clickable (stretched
+  link). Without one (this preview — post pages don't exist yet): identical
+  markup, plain text, no hover. Never "#".
+  Empty `thumbnail` → branded placeholder tile. Empty `date` → no <time>.
+  Spotlights drop the "Team Spotlight: " prefix — the kicker carries it.
+{%- endcomment -%}
+{%- assign p = include.post -%}
+{%- case p.kind %}{% when "spotlight" %}{% assign kicker = "Team spotlight" %}{% when "update" %}{% assign kicker = "Study update" %}{% else %}{% assign kicker = "Feature" %}{% endcase -%}
+{%- assign title = p.title | remove_first: "Team Spotlight: " -%}
+<li class="card post-card{% unless p.url %} post-card--static{% endunless %}">
+  <div class="post-card__media">
+    {%- if p.thumbnail and p.thumbnail != "" %}
+    <img src="{{ p.thumbnail | relative_url }}" width="675" height="506" alt=""{% if include.index > 2 %} loading="lazy"{% endif %} decoding="async">
+    {%- else %}
+    <span class="post-card__tile" aria-hidden="true"><img src="{{ '/assets/img/vigor-logo.svg' | relative_url }}" width="164" height="64" alt=""></span>
+    {%- endif %}
+  </div>
+  <div class="post-card__body">
+    <p class="post-card__kicker t-ui-small t-ui-small--heading">{{ kicker }}</p>
+    <h2 class="post-card__title t-heading-card">{% if p.url %}<a class="post-card__link" href="{{ p.url | relative_url }}">{{ title }}</a>{% else %}{{ title }}{% endif %}</h2>
+    {%- if p.excerpt and p.excerpt != "" %}
+    <p class="post-card__excerpt t-body text-secondary">{{ p.excerpt | strip }}</p>
+    {%- endif %}
+    {%- if p.date and p.date != "" %}
+    <time class="post-card__date t-caption text-secondary" datetime="{{ p.date | date: '%Y-%m-%d' }}">{{ p.date | date: "%B %-d, %Y" }}</time>
+    {%- endif %}
+  </div>
+</li>

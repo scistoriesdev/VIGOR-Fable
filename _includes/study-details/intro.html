@@ -1,0 +1,23 @@
+{%- comment -%}
+  Study Details · page head + key features · WP page-study-details.php
+  Copy from _data/study_details.yml.
+{%- endcomment -%}
+{%- assign sd = site.data.study_details -%}
+<section class="page-head container" aria-labelledby="sd-h">
+  <div class="stack-4">
+    <span class="keyline" aria-hidden="true"></span>
+    <h1 id="sd-h" class="t-display">Study Details</h1>
+    <p class="t-lead text-secondary page-head__lead">{{ sd.intro | strip }}</p>
+  </div>
+</section>
+
+<section id="features" class="section-band" aria-labelledby="features-h">
+  <div class="section container row-4-8">
+    <h2 id="features-h" class="t-heading-section">{{ sd.features_heading }}</h2>
+    <ul class="dot-list">
+      {%- for f in sd.features %}
+      <li class="t-body"><img src="{{ '/assets/img/dot.svg' | relative_url }}" width="11" height="28" alt="">{{ f }}</li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

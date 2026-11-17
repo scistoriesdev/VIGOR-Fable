@@ -1,0 +1,18 @@
+{%- comment -%}
+  Updates · post grid · WP template-parts/post-grid.php
+  Order: undated posts first in live order (they are the newest), then the
+  rest newest-first. One card per post; see post-card.html.
+{%- endcomment -%}
+{%- assign posts = site.data.updates.posts -%}
+{%- assign undated = posts | where_exp: "p", "p.date == ''" -%}
+{%- assign dated = posts | where_exp: "p", "p.date != ''" | sort: "date" | reverse -%}
+<section class="section-band" aria-labelledby="posts-h">
+  <div class="section container">
+    <h2 id="posts-h" class="visually-hidden">All posts</h2>
+    <ul class="post-grid">
+      {%- assign i = 0 %}
+      {%- for p in undated %}{% include post-card.html post=p index=i %}{% assign i = i | plus: 1 %}{% endfor %}
+      {%- for p in dated %}{% include post-card.html post=p index=i %}{% assign i = i | plus: 1 %}{% endfor %}
+    </ul>
+  </div>
+</section>

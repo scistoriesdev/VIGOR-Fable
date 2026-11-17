@@ -1,0 +1,88 @@
+# Study Details page — content captured from the live site
+# https://vigor.umassmed.edu/vigor/s/study-details (2026-11-15).
+# Client copy, verbatim apart from obvious typos (noted inline).
+# Field names map to the Carbon Fields the WordPress template will use.
+
+# typo fixed: "out study" → "our study"
+intro: >
+  Over the course of this study, our research team will be sending out test
+  kits for participants to sample their own skin and blood remotely, without
+  needing to visit our clinic. Please read below to learn more about the key
+  features of our study, a timeline, and a list of the sampling devices that
+  we will be using throughout this study.
+
+features_heading: Key features of our study
+features:
+  - Discover genetic influence on vitiligo.
+  - "Ambitious project: 1,000 participants tracked over years."   # "1000" → "1,000" to match the homepage
+  - "Inclusive: Involves both individuals with vitiligo and their at-risk family members."
+  - "Fully remote: No in-person visits required, convenient from home."
+
+# Timeline reproduced exactly as the live site's graphic, in order, with the
+# same wording. Labels alternate above / below the line as on the live site.
+# NOTE: this cadence (surveys + samples at 6 and 12 months, survey at 9) does
+# not match the homepage's "survey every 3 months, samples every 6 months".
+# Raised with the manager — see docs/CLIENT-QUESTIONS.md.
+timeline_heading: Study timeline
+timeline:
+  - Register!
+  - Recruit Family
+  - Saliva Sample
+  - Complete first survey and sample collection
+  - 3 Month Survey
+  - 6-month survey and sample collection
+  - 9 Month Survey
+  - 12-month survey and sample collection
+  - Continue surveys/samples for 5 years
+
+devices_heading: Sampling devices
+devices:   # ordered as on the timeline: saliva → blood → skin tape → micro patches
+  - id: saliva
+    name: Saliva collection kit
+    # no description on the live site, video only — see docs/CLIENT-QUESTIONS.md
+    video:
+      provider: youtube
+      id: gL7K6lbpjy4
+      title: "OMNIgene ORAL: collecting a saliva sample"
+
+  - id: blood
+    name: Blood drawing device
+    # typos fixed: comma before "eliminating"; "lab visit" → "lab visits"
+    body: >
+      Our study utilizes Tasso's remote sampling blood drawing devices for
+      in-home sampling made easy. Participants of the study will receive a
+      Tasso blood sampling device, and they will be able to take their own
+      sample, eliminating painful venous draws and inconvenient lab visits.
+    more_text: "To read more about Tasso's blood sampling devices,"
+    more_url: https://www.tassoinc.com/
+    video:
+      provider: vimeo
+      id: "759587605"
+      title: Tasso blood sampling device
+
+  - id: skin-tape
+    name: Skin tape
+    # typo fixed: "easy to use skin tape" → "easy-to-use skin tape"
+    body: >
+      DermTech's easy-to-use skin tape is made of a specially designed adhesive
+      that is strong yet gentle enough to non-invasively lift skin cells from
+      the top layers of your skin (where the genomic markers are present), with
+      little to no discomfort. The skin tape also stores and preserves your skin
+      cells for the time needed to ship.
+    more_text: "To read more about DermTech's skin tape,"
+    more_url: https://dermtech.com/how-it-works/
+    note: >
+      The video below shows how DermTech skin tape can be used for melanoma
+      testing, however, the application of the skin tape remains the same for
+      our study.
+    video:
+      provider: youtube
+      id: S01glu4mLXw
+      title: How to use the DermTech skin tape
+
+  - id: micro-patches
+    name: Micro patches
+    body: >
+      The skin patches being used in this study just sample the surface of the
+      skin and are simple to do by yourself.
+    # no video and no vendor on the live site — see docs/CLIENT-QUESTIONS.md

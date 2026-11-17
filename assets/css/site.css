@@ -216,7 +216,8 @@ a.footer-link:hover,
 
 .cta-wide{ display:flex; justify-content:center; padding-top:var(--space-4); }
 .cta-band{ padding-bottom:var(--space-9); }
-.cta-band .cta-wide{ padding-top:0; justify-content:flex-start; }   /* left-aligned, flush with the section copy */
+.section-band + .cta-band{ padding-top:var(--space-9); }   /* after a coloured band the button needs its own top room */
+.cta-band .cta-wide{ padding-top:0; }   /* standalone closing band: centred on every page */
 
 /* ---------- team (Figma 352:77) ---------- */
 .team-grid{
@@ -251,6 +252,98 @@ button.team-card:hover .team-card__name{ color:var(--color-accent); text-decorat
 .logo-list{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--space-6) var(--space-7); max-width:872px; margin:0; padding:0; list-style:none; }
 .logo-list li{ display:flex; align-items:center; flex:1 1 200px; min-width:0; }   /* three share the 872px row; wrap below ~700px */
 .logo-list img{ display:block; width:100%; height:auto; }
+
+/* ---------- Study Details page ---------- */
+.page-head{ padding-block:var(--space-7) var(--space-9); }                 /* same bottom rhythm as .section */
+.page-head__lead{ max-width:872px; }                                     /* col-8 */
+.row-4-8{ display:grid; grid-template-columns:minmax(0,424fr) minmax(0,872fr); gap:var(--space-5); align-items:start; }
+
+/* Timeline: nine milestones on one line, labels alternating above / below
+   (as on the live site's graphic). Each item subgrids the three rows so the
+   line stays level whatever the label heights. */
+.timeline{
+  display:grid; grid-template-columns:repeat(9, minmax(0,1fr)); grid-template-rows:auto var(--space-7) auto;
+  column-gap:var(--space-2); margin:0; padding:0; list-style:none; position:relative;
+}
+.timeline::before{                                                         /* the line */
+  content:""; grid-area:2 / 1 / 3 / -1; align-self:center; height:3px;
+  margin-inline:calc(100% / 18); border-radius:var(--radius-full); background:var(--color-border-secondary);
+}
+.timeline__item{ display:grid; grid-template-rows:subgrid; grid-row:1 / 4; grid-column:var(--col); justify-items:center; }
+.timeline__dot{
+  grid-row:2; align-self:center; position:relative; width:14px; height:14px;
+  border-radius:50%; background:var(--color-accent); box-shadow:0 0 0 3px var(--color-bg);
+}
+.timeline__dot::before{                                                    /* tick to the label */
+  content:""; position:absolute; left:50%; width:2px; height:var(--space-4); margin-left:-1px;
+  background:var(--color-border-secondary);
+}
+.timeline__label{ text-align:center; color:var(--color-text); }
+.timeline__item:nth-child(odd)  .timeline__label{ grid-row:1; align-self:end;   padding-bottom:var(--space-1); }
+.timeline__item:nth-child(even) .timeline__label{ grid-row:3; align-self:start; padding-top:var(--space-1); }
+.timeline__item:nth-child(odd)  .timeline__dot::before{ bottom:100%; }
+.timeline__item:nth-child(even) .timeline__dot::before{ top:100%; }
+
+/* Draw-on animation. The include's inline script adds .timeline--animate (so
+   nothing flashes before JS), then .is-drawn once the list scrolls into view.
+   Without JS, or with reduced motion, the timeline simply renders complete.
+   Sequence: line draws left→right; each dot pops as the line reaches it, its
+   tick draws, then its label fades in. --col staggers everything. */
+.timeline{ --tl-draw:1.4s; }
+.timeline--animate::before{ transform:scaleX(0); transform-origin:left center; }
+.timeline--animate .timeline__dot{ transform:scale(0); }
+.timeline--animate .timeline__dot::before{ transform:scaleY(0); }
+.timeline--animate .timeline__item:nth-child(odd)  .timeline__dot::before{ transform-origin:center bottom; }
+.timeline--animate .timeline__item:nth-child(even) .timeline__dot::before{ transform-origin:center top; }
+.timeline--animate .timeline__label{ opacity:0; }
+.timeline--animate.is-drawn::before{ animation:tl-line var(--tl-draw) cubic-bezier(.4,0,.2,1) forwards; }
+.timeline--animate.is-drawn .timeline__dot{
+  animation:tl-pop .35s cubic-bezier(.2,.9,.3,1.3) forwards;
+  animation-delay:calc((var(--col) - .5) * var(--tl-draw) / 9);
+}
+.timeline--animate.is-drawn .timeline__dot::before{
+  animation:tl-tick .3s ease-out forwards;
+  animation-delay:calc((var(--col) - .5) * var(--tl-draw) / 9 + .2s);
+}
+.timeline--animate.is-drawn .timeline__label{
+  animation:tl-fade .4s ease-out forwards;
+  animation-delay:calc((var(--col) - .5) * var(--tl-draw) / 9 + .4s);
+}
+@keyframes tl-line{ to{ transform:scaleX(1); } }
+@keyframes tl-line-v{ to{ transform:scaleY(1); } }
+@keyframes tl-pop{ to{ transform:scale(1); } }
+@keyframes tl-tick{ to{ transform:scaleY(1); } }
+@keyframes tl-fade{ from{ opacity:0; translate:0 4px; } to{ opacity:1; translate:0 0; } }
+
+.device--single{ max-width:872px; }                                      /* lone half runs at col-8 */
+.device .t-caption em{ font-style:italic; }
+.video{
+  aspect-ratio:16 / 9; overflow:hidden; border-radius:var(--radius-md);
+  background:var(--color-photo-dark); box-shadow:var(--shadow-md);
+}
+.video iframe{ display:block; width:100%; height:100%; border:0; }
+
+/* ---------- Updates index (the live site's blog) ---------- */
+.post-grid{
+  display:grid; grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:var(--space-7) var(--space-5); margin:0; padding:0; list-style:none;   /* 3 × col-4, as .team-grid */
+}
+.post-card{ position:relative; padding:0; gap:0; overflow:hidden; transition:box-shadow .2s ease; }
+.post-card__media{ aspect-ratio:4 / 3; overflow:hidden; background:var(--color-accent-2-200); }
+.post-card__media img{ width:100%; height:100%; object-fit:cover; }
+.post-card__tile{ display:grid; place-items:center; width:100%; height:100%; }   /* branded placeholder */
+.post-card__tile img{ width:164px; height:auto; }
+.post-card__body{ display:flex; flex-direction:column; flex:1; gap:var(--space-2); padding:var(--space-6); }
+.post-card__kicker{ color:var(--color-accent-2-700); }
+.post-card__title{ margin:0; }
+.post-card__date{ margin-top:auto; padding-top:var(--space-2); }   /* dates share a baseline across the row */
+.post-card__link{ color:inherit; text-decoration:none; }
+.post-card__link::after{ content:""; position:absolute; inset:0; }        /* whole card clickable, link text = title */
+.post-card:has(.post-card__link:hover){ box-shadow:var(--shadow-lg); }
+.post-card__link:hover{ text-decoration:underline; text-underline-offset:.2em; }
+.post-card__link:focus-visible{ outline:0; }
+.post-card:has(.post-card__link:focus-visible){ outline:3px solid var(--color-focus); outline-offset:3px; }
+.post-card--static{ cursor:default; }
 
 /* ---------- FAQ (Figma 353:6) ---------- */
 .faq{ display:grid; grid-template-columns:minmax(0,424fr) minmax(0,872fr); gap:var(--space-5); align-items:start; }
@@ -315,7 +408,8 @@ button.team-card:hover .team-card__name{ color:var(--color-accent); text-decorat
 .icon-btn:hover,.btn-secondary:hover{ background:var(--color-accent-100); }
 
 @media (prefers-reduced-motion:reduce){
-  .team-card__portrait,.faq__chev{ transition:none; }
+  .team-card__portrait,.faq__chev,.post-card{ transition:none; }
+  .timeline--animate, .timeline--animate::before, .timeline--animate *, .timeline--animate *::before{ animation:none!important; transform:none!important; opacity:1!important; }
 }
 
 /* ---------- breakpoints: 1200 / 768 ---------- */
@@ -324,6 +418,15 @@ button.team-card:hover .team-card__name{ color:var(--color-accent); text-decorat
   .site-nav{ display:none; }
   .hero__card{ min-height:560px; padding:var(--space-7); }
   .footer-nav{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); }
+  .post-grid{ grid-template-columns:repeat(2, minmax(0,1fr)); }
+  .timeline{ display:flex; flex-direction:column; gap:var(--space-4); padding-left:var(--space-1); }
+  .timeline::before{ position:absolute; align-self:auto; left:calc(var(--space-1) + 6px); top:var(--space-2); bottom:var(--space-2); width:3px; height:auto; margin:0; }   /* align-self:auto — centre would shrink it to 0 */
+  .timeline__item{ display:flex; align-items:flex-start; gap:var(--space-3); }
+  .timeline__dot{ flex:none; margin-top:4px; }
+  .timeline__dot::before{ display:none; }
+  .timeline__item .timeline__label{ text-align:left; padding:0; }
+  .timeline--animate::before{ transform:scaleY(0); transform-origin:center top; }
+  .timeline--animate.is-drawn::before{ animation-name:tl-line-v; }
 }
 @media (max-width:767.98px){
   .site-header__inner{ gap:var(--space-4); }
@@ -346,7 +449,9 @@ button.team-card:hover .team-card__name{ color:var(--color-accent); text-decorat
   .hero__card::before{
     background:linear-gradient(180deg, transparent 0, transparent 150px, var(--color-photo-dark) 240px);
   }
-  .row-6-6,.faq{ grid-template-columns:minmax(0,1fr); }
+  .row-6-6,.faq,.row-4-8{ grid-template-columns:minmax(0,1fr); }
+  .post-grid{ grid-template-columns:minmax(0,1fr); }
+  .post-card__body{ padding:var(--space-5); }
   .faq{ gap:var(--space-6); }
   .card{ padding:var(--space-5); }
   .steps > div{ grid-template-columns:minmax(0,1fr); gap:var(--space-1); }

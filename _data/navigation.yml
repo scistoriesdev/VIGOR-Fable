@@ -1,18 +1,19 @@
 # Header and footer navigation. Field names map 1:1 to the WordPress menus /
 # Carbon Fields the theme will use later.
 #
-# url:      in-page anchor or page path. Leave it out when the client has not
+# url:      page path, or "/#anchor" so it works from every page ("#contact" is
+#           the footer, present on all pages). Leave it out when the client has not
 #           supplied a destination — the item renders as text + "destination
 #           needed", never as a dead link.
 # join:     true = the Join the Study control (non-navigating in this preview).
 
 main:
   - label: About
-    url: "#about"
+    url: "/#about"
   - label: Study Details
-    url: "#details"
+    url: "/study-details/"
   - label: Updates
-    url: "#updates"
+    url: "/updates/"
   - label: Contact
     url: "#contact"
 
@@ -21,22 +22,24 @@ footer:
     id: about-the-study
     items:
       - label: Study overview
-        url: "#about"
+        url: "/#about"
       - label: What’s involved
-        url: "#whats-involved"
+        url: "/#whats-involved"
       - label: Our team
-        url: "#team"
+        url: "/#team"
       - label: Funding & Support
-        url: "#updates"
+        url: "/#support"
+      - label: Updates
+        url: "/updates/"
   - heading: Take part
     id: take-part
     items:
       - label: Join the Study
         join: true
       - label: Who can join
-        url: "#eligibility"
+        url: "/#eligibility"
       - label: Questions families ask
-        url: "#faq"
+        url: "/#faq"
       # - label: Read the consent form     # removed until the client supplies the consent form URL
   - heading: Participant information
     id: participant-information

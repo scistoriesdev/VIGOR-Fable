@@ -1,0 +1,157 @@
+# Updates (the live site's Blog) — captured from https://vigor.umassmed.edu/vigor/s/blog
+# (2026-11-17), live order. The client calls it the blog; on this site it is "Updates".
+# Field names map to the WordPress post fields (title, date, excerpt, thumbnail).
+# Post bodies live on separate live pages and are NOT captured here — see
+# docs/CLIENT-QUESTIONS.md. `live_url` is the source post; no local post page exists
+# yet, so cards render as plain text (never a dead link) until posts are built.
+# Four posts show no date on the live site — left empty, not guessed.
+# `url` (local post page) and `excerpt` are reserved for when post pages exist.
+
+intro_title: Updates   # live h1 is "Welcome to the VIGOR Blog!" — see docs/CLIENT-QUESTIONS.md
+intro_sub: The latest information about our ongoing vitiligo clinical study
+intro: >
+  This blog is your inside scoop on all things related to our VIGOR study! If
+  you're enrolled in the study, thinking about enrolling in the study, or simply
+  curious about the progress of our research, we encourage you to follow our
+  blog for weekly updates.
+
+posts:
+  - title: "January Updates from the VIGOR Team"
+    slug: january-updates-from-the-vigor-team
+    date: ""
+    kind: update
+    thumbnail: ""   # live site shows the old purple-butterfly logo; branded tile instead
+    live_url: https://vigor.umassmed.edu/vigor/s/blog/cms-blog-post/january-updates-from-the-vigor-team-MCXN5USJN7MZGLJKKOPEICPZ7KXE
+
+  - title: "November Updates from the VIGOR Team"
+    slug: november-updates-from-the-vigor-team
+    date: ""
+    kind: update
+    thumbnail: ""   # live site shows the old purple-butterfly logo; branded tile instead
+    live_url: https://vigor.umassmed.edu/vigor/s/blog/cms-blog-post/november-updates-from-the-vigor-team-MC6ASTTZH5G5EJLEEOHEO6GYRMLU
+
+  - title: "July Updates from the VIGOR Team"
+    slug: july-updates-from-the-vigor-team
+    date: ""
+    kind: update
+    thumbnail: ""   # live site shows the old purple-butterfly logo; branded tile instead
+    live_url: https://vigor.umassmed.edu/vigor/s/blog/cms-blog-post/july-updates-from-the-vigor-team-MC2SOSEM2PAZE7VLTFHWE7ZINJR4
+
+  - title: "Team Spotlight: Priscilla Romano, MD"
+    slug: team-spotlight-priscilla-romano-md
+    date: ""
+    kind: spotlight
+    thumbnail: /assets/img/updates/team-spotlight-priscilla-romano-md.jpg
+    live_url: https://vigor.umassmed.edu/vigor/s/blog/cms-blog-post/team-spotlight-priscilla-romano-md-MCQIJ5QCDDFBFZHFFHYS6M2IBVVI
+
+  - title: "June Updates from the VIGOR Team"
+    slug: june-updates-from-the-vigor-team
+    date: 2025-06-04
+    kind: update
+    thumbnail: ""   # live site shows the old purple-butterfly logo crop; branded tile instead
+    live_url: https://vigor.umassmed.edu/vigor/s/blog/cms-blog-post/june-updates-from-the-vigor-team-MCQBODPXABY5GOPCP636HYXXF5BA
+
+  - title: "Where are VIGOR Participants From?"
+    slug: where-are-vigor-participants-from
+    date: 2025-02-03
+    kind: article
+    thumbnail: /assets/img/updates/where-are-vigor-participants-from.jpg
+    live_url: https://vigor.umassmed.edu/vigor/s/blog/cms-blog-post/where-are-vigor-participants-from-MCRLODL6J3BREGXJD4BK7BLWOBIY
+
+  - title: "All about DASH Cards"
+    slug: all-about-dash-cards
+    date: 2025-01-09
+    kind: article
+    thumbnail: /assets/img/updates/all-about-dash-cards.jpg
+    live_url: https://vigor.umassmed.edu/vigor/s/blog/cms-blog-post/all-about-dash-cards-MCWROGUAHENVEYLD7GOB5KG7AUJY
+
+  - title: "Exciting Progress and Important Updates from the VIGOR Study"
+    slug: vigor-study-update
+    date: 2023-11-16
+    kind: update
+    thumbnail: /assets/img/updates/vigor-study-update.jpg
+    live_url: https://vigor.umassmed.edu/vigor/s/blog/cms-blog-post/vigor-study-update-MC33WUZXRHVNBTZD437ZIXZ7YYFE
+
+  - title: "The Future of Vitiligo Research is Now: A Look Back at the VCORT Symposium"
+    slug: vcort-symposium
+    date: 2024-03-04
+    kind: article
+    thumbnail: /assets/img/updates/vcort-symposium.jpg
+    live_url: https://vigor.umassmed.edu/vigor/s/blog/cms-blog-post/vcort-symposium-MC4ZMV7Q2RCFHU3MMVV3CQMW4BGI
+
+  - title: "Team Spotlight: Elaine Flynn"
+    slug: elaine-flynn
+    date: 2024-02-19
+    kind: spotlight
+    thumbnail: /assets/img/updates/elaine-flynn.jpg
+    live_url: https://vigor.umassmed.edu/vigor/s/blog/cms-blog-post/elaine-flynn-MCEBD7LZVQYVH35NLMSCOPZ5QQL4
+
+  - title: "Team Spotlight: Jane Vongvirath"
+    slug: jane-vongvirath
+    date: 2024-01-22
+    kind: spotlight
+    thumbnail: /assets/img/updates/jane-vongvirath.jpg
+    live_url: https://vigor.umassmed.edu/vigor/s/blog/cms-blog-post/jane-vongvirath-MCFFTJDRUA4NDIDJL2FKYDMPWCDE
+
+  - title: "Team Spotlight: Elizabeth MacDonald"
+    slug: elizabeth-macdonald
+    date: 2024-01-15
+    kind: spotlight
+    thumbnail: /assets/img/updates/elizabeth-macdonald.jpg
+    live_url: https://vigor.umassmed.edu/vigor/s/blog/cms-blog-post/elizabeth-macdonald-MCSLKFGB4MOZB3HNMHBCXH3L264U
+
+  - title: "Team Spotlight: George Kwapong"
+    slug: george-kwapong
+    date: 2024-01-11
+    kind: spotlight
+    thumbnail: /assets/img/updates/george-kwapong.jpg
+    live_url: https://vigor.umassmed.edu/vigor/s/blog/cms-blog-post/george-kwapong-MCHPSR3HFDRFG7NO5RH6C4L6CAX4
+
+  - title: "Team Spotlight: John Harris, MD, PhD"
+    slug: john-harris
+    date: 2023-12-07
+    kind: spotlight
+    thumbnail: /assets/img/updates/john-harris.jpg
+    live_url: https://vigor.umassmed.edu/vigor/s/blog/cms-blog-post/john-harris-MCFBLFYCMIRNGCXN5F4LGOFWWHPI
+
+  - title: "Team Spotlight: Rich Spritz, MD"
+    slug: rich-spritz
+    date: 2023-11-22
+    kind: spotlight
+    thumbnail: /assets/img/updates/rich-spritz.jpg
+    live_url: https://vigor.umassmed.edu/vigor/s/blog/cms-blog-post/rich-spritz-MCDBA3DCUYKNG5ZKLRCAKU4I7YRE
+
+  - title: "Team Spotlight: Celia Hartigan, RN, MPH"
+    slug: celia-hartigan
+    date: 2023-10-30
+    kind: spotlight
+    thumbnail: /assets/img/updates/celia-hartigan.jpg
+    live_url: https://vigor.umassmed.edu/vigor/s/blog/cms-blog-post/celia-hartigan-MC54IECYFIUJD3NFNYJPAIG46QJU
+
+  - title: "Team Spotlight: Manuel Garber, PhD"
+    slug: manuel-garber
+    date: 2023-10-09
+    kind: spotlight
+    thumbnail: /assets/img/updates/manuel-garber.jpg
+    live_url: https://vigor.umassmed.edu/vigor/s/blog/cms-blog-post/manuel-garber-MCFC64XKYWLVEXTHEF6HC52ACTKA
+
+  - title: "Autoimmunity Allegory"
+    slug: autoimmunity-allegory
+    date: 2023-10-02
+    kind: article
+    thumbnail: /assets/img/updates/autoimmunity-allegory.jpg
+    live_url: https://vigor.umassmed.edu/vigor/s/blog/cms-blog-post/autoimmunity-allegory-MCYWKJOD5K6VFU7MLRJUVJOEN32U
+
+  - title: "Team Spotlight: Todd Pearson, PhD"
+    slug: todd-pearson
+    date: 2023-09-21
+    kind: spotlight
+    thumbnail: /assets/img/updates/todd-pearson.jpg
+    live_url: https://vigor.umassmed.edu/vigor/s/blog/cms-blog-post/todd-pearson-MC5YUMMXJIPFGEJHEBAIK7WOLJIU
+
+  - title: "Why VIGOR? Because vitiligo is a complex disease!"
+    slug: vitiligo-is-a-complex-disease
+    date: 2023-09-06
+    kind: article
+    thumbnail: /assets/img/updates/vitiligo-is-a-complex-disease.jpg
+    live_url: https://vigor.umassmed.edu/vigor/s/blog/cms-blog-post/vitiligo-is-a-complex-disease-MCJ57W2HSPSZFRVHO7FSDACKU6RI

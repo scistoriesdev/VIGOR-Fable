@@ -1,0 +1,9 @@
+{%- comment -%} One embedded vendor video, 16:9. Privacy-enhanced YouTube / Vimeo dnt. {%- endcomment -%}
+{%- assign v = include.video -%}
+<div class="video">
+  {%- if v.provider == "vimeo" %}
+  <iframe src="https://player.vimeo.com/video/{{ v.id }}?dnt=1" title="{{ v.title }}" loading="lazy" allow="fullscreen; picture-in-picture"></iframe>
+  {%- else %}
+  <iframe src="https://www.youtube-nocookie.com/embed/{{ v.id }}" title="{{ v.title }}" loading="lazy" allow="fullscreen; picture-in-picture"></iframe>
+  {%- endif %}
+</div>

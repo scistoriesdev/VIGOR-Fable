@@ -1,0 +1,41 @@
+{%- comment -%}
+  Sampling devices · WP template-parts/devices.php
+  One row per device: copy left, video right. A device with no copy or no
+  video simply omits that half. Videos embed through the privacy-enhanced
+  YouTube domain / Vimeo with dnt=1, and load lazily.
+{%- endcomment -%}
+{%- assign sd = site.data.study_details -%}
+<section id="devices" class="section-band" aria-labelledby="devices-h">
+  <div class="section container stack-7">
+    <h2 id="devices-h" class="t-heading-section">{{ sd.devices_heading }}</h2>
+    {%- for d in sd.devices %}
+    {%- comment -%} A row has as many halves as it has content: copy + video → 6/6;
+        a lone half runs at the col-8 measure. Adding the missing copy/video in
+        the YAML turns the row into 6/6 with no template change. {%- endcomment -%}
+    {%- assign has_copy = false %}{% if d.body %}{% assign has_copy = true %}{% endif %}
+    {%- if has_copy and d.video %}
+    <div id="device-{{ d.id }}" class="row-6-6 row-6-6--top device">
+      <div class="stack-4">
+        <h3 class="t-heading-card">{{ d.name }}</h3>
+        <p class="t-body text-secondary">{{ d.body | strip }}{% if d.more_url %} {{ d.more_text }} <a href="{{ d.more_url }}">click here</a>.{% endif %}</p>
+        {%- if d.note %}
+        <p class="t-caption text-secondary"><em>{{ d.note | strip }}</em></p>
+        {%- endif %}
+      </div>
+      {%- include study-details/video.html video=d.video %}
+    </div>
+    {%- else %}
+    <div id="device-{{ d.id }}" class="stack-4 device device--single">
+      <h3 class="t-heading-card">{{ d.name }}</h3>
+      {%- if has_copy %}
+      <p class="t-body text-secondary">{{ d.body | strip }}{% if d.more_url %} {{ d.more_text }} <a href="{{ d.more_url }}">click here</a>.{% endif %}</p>
+      {%- endif %}
+      {%- if d.note %}
+      <p class="t-caption text-secondary"><em>{{ d.note | strip }}</em></p>
+      {%- endif %}
+      {%- if d.video %}{% include study-details/video.html video=d.video %}{% endif %}
+    </div>
+    {%- endif %}
+    {%- endfor %}
+  </div>
+</section>
