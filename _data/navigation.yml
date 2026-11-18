@@ -1,21 +1,22 @@
 # Header and footer navigation. Field names map 1:1 to the WordPress menus /
 # Carbon Fields the theme will use later.
 #
-# url:      page path, or "/#anchor" so it works from every page ("#contact" is
-#           the footer, present on all pages). Leave it out when the client has not
+# url:      page path, or "/#anchor" so it works from every page. Leave it out when the client has not
 #           supplied a destination — the item renders as text + "destination
 #           needed", never as a dead link.
 # join:     true = the Join the Study control (non-navigating in this preview).
 
 main:
   - label: About
-    url: "/#about"
+    url: "/"          # About is the homepage
   - label: Study Details
     url: "/study-details/"
   - label: Updates
     url: "/updates/"
+  - label: FAQ
+    url: "/faq/"
   - label: Contact
-    url: "#contact"
+    url: "/contact/"
 
 footer:
   - heading: About the study
@@ -31,6 +32,9 @@ footer:
         url: "/#support"
       - label: Updates
         url: "/updates/"
+      - label: Webinars (YouTube)
+        url: "https://www.youtube.com/playlist?list=PLuAUZuB28M_TI7ZHrHSOFjnjrSLf-UmGt"
+        external: true
   - heading: Take part
     id: take-part
     items:
@@ -38,8 +42,8 @@ footer:
         join: true
       - label: Who can join
         url: "/#eligibility"
-      - label: Questions families ask
-        url: "/#faq"
+      - label: FAQ
+        url: "/faq/"
       # - label: Read the consent form     # removed until the client supplies the consent form URL
   - heading: Participant information
     id: participant-information
@@ -49,9 +53,15 @@ footer:
   - heading: Contact the VIGOR team
     id: contact-the-vigor-team
     type: contact
-    # Heading only until the client confirms the contact details. The live site's
-    # UMass Chan details are NOT to be presented as confirmed (manager, 2026-11-15):
+    # PLACEHOLDER copy so the column is not empty in the prototype — replace the
+    # `address` lines (and add `email`) once the client confirms the details.
+    # The live site's UMass Chan details are NOT to be presented as confirmed
+    # (manager, 2026-11-15):
     #   address: VIGOR Study Team / UMass Chan Medical School / Department of
     #            Dermatology / 364 Plantation Street / Worcester, MA 01605
     #   email:   vigor@umassmed.edu
     #   phone:   none supplied (508-555-1234 was fictional)
+    address:
+      - VIGOR Study Team
+      - We’re happy to answer questions about the study.
+      - Contact details will be published here.

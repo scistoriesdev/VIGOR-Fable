@@ -17,7 +17,7 @@
     <div id="device-{{ d.id }}" class="row-6-6 row-6-6--top device">
       <div class="stack-4">
         <h3 class="t-heading-card">{{ d.name }}</h3>
-        <p class="t-body text-secondary">{{ d.body | strip }}{% if d.more_url %} {{ d.more_text }} <a href="{{ d.more_url }}">click here</a>.{% endif %}</p>
+        <p class="t-body text-secondary">{{ d.body | strip }}{% if d.more_url %} {{ d.more_text }} <a href="{{ d.more_url }}" target="_blank" rel="noopener noreferrer">click here</a>.{% endif %}</p>
         {%- if d.note %}
         <p class="t-caption text-secondary"><em>{{ d.note | strip }}</em></p>
         {%- endif %}
@@ -28,7 +28,7 @@
     <div id="device-{{ d.id }}" class="stack-4 device device--single">
       <h3 class="t-heading-card">{{ d.name }}</h3>
       {%- if has_copy %}
-      <p class="t-body text-secondary">{{ d.body | strip }}{% if d.more_url %} {{ d.more_text }} <a href="{{ d.more_url }}">click here</a>.{% endif %}</p>
+      <p class="t-body text-secondary">{{ d.body | strip }}{% if d.more_url %} {{ d.more_text }} <a href="{{ d.more_url }}" target="_blank" rel="noopener noreferrer">click here</a>.{% endif %}</p>
       {%- endif %}
       {%- if d.note %}
       <p class="t-caption text-secondary"><em>{{ d.note | strip }}</em></p>

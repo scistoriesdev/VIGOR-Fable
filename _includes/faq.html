@@ -1,23 +1,15 @@
+{%- comment -%}
+  Homepage FAQ · Figma 353:6 · WP template-parts/faq.php
+  col-4 heading + col-8 accordion (faq-list.html). Links to the full FAQ page.
+{%- endcomment -%}
 <section id="faq" class="section-band" aria-labelledby="faq-h">
   <div class="section container faq">
     <div class="faq__head stack-4">
       <h2 id="faq-h" class="t-heading-section">Questions families ask</h2>
       <span class="keyline" aria-hidden="true"></span>
+      <p><a class="t-ui-strong faq__more" href="{{ '/faq/' | relative_url }}">All questions and answers →</a></p>
     </div>
-    <div class="faq__list">
-      {%- for item in site.data.faq %}
-      <div class="faq__item">
-        <h3 class="faq__q">
-          <button type="button" class="faq__trigger t-ui-strong" id="faq-b{{ forloop.index }}" aria-controls="faq-p{{ forloop.index }}" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}">
-            <span>{{ item.q }}</span>
-            <span class="faq__chev" aria-hidden="true">▾</span>
-          </button>
-        </h3>
-        <div class="faq__panel" id="faq-p{{ forloop.index }}" role="region" aria-labelledby="faq-b{{ forloop.index }}">
-          <p class="t-body">{{ item.a }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
+    {% include faq-list.html items=site.data.faq prefix="faq" %}
   </div>
 </section>
+<script src="{{ '/assets/js/faq.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>

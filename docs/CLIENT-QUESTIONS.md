@@ -11,7 +11,9 @@ Last updated: 2026-11-17
 1. **Contact details.** Street address, email and phone for the "Contact the VIGOR
    team" footer column. The live site's UMass Chan details (364 Plantation Street,
    Worcester; vigor@umassmed.edu) are not to be shown as confirmed following the
-   move to Mass General Brigham. The column currently shows its heading only.
+   move to Mass General Brigham. The column currently shows placeholder lines
+   ("We’re happy to answer questions about the study. Contact details will be
+   published here.") until the real details arrive.
 2. **Laura Lajoie.** Role/title and a first-person bio. Her tile is shown without a
    bio and does not open the popup.
 3. **Thomas Jacob.** Role/title and a first-person bio. Same as above.
@@ -58,9 +60,12 @@ Last updated: 2026-11-17
 21. **Images for the "Updates" posts.** The live site uses the old purple-butterfly
     logo for January, November, July and June Updates. The preview shows a branded
     VIGOR tile instead. Supply images, or accept the tile permanently?
-22. **Post bodies.** The 20 posts' full text lives on separate live pages and has not
-    been brought across. Should all 20 be migrated, or a subset? Cards are plain text
-    until post pages exist.
+22. **Post bodies** are now migrated from the CMS export (22 posts). Two posts in the
+    export are not on the live index — "A Breakthrough in Skin Disease…" (May 2023) and
+    "Bill H.976…" (July 2023) — presumably because the live list caps at 20. Both are
+    included; confirm they should stay published. The export also holds an earlier
+    near-duplicate "Autoimmune Allegory" (Aug 2023) of "Autoimmunity Allegory"
+    (Oct 2023); only the later one is used.
 23. **"Blog" wording.** The page is now "Updates" (header and footer link, URL
     /updates/). The live h1 "Welcome to the VIGOR Blog!" is replaced by "Updates"; the
     subtitle and intro still say "blog" ("follow our blog for weekly updates"). Confirm
@@ -68,3 +73,27 @@ Last updated: 2026-11-17
 24. **Subtitle wording.** "our ongoing vitiligo clinical study" vs the site's own
     statement that VIGOR is not a clinical trial. Change to "research study"?
 25. **"Weekly updates"** in the intro: recent cadence is monthly or slower. Keep or revise?
+26. **Dated links inside posts.** Several posts link to past Zoom webinar registrations
+    and REDCap surveys. Keep as historical record, or remove?
+27. **Underlined text** in post bodies was converted to bold, since underline is
+    reserved for links in the design system. Confirm.
+28. **Card excerpts.** Each Updates card now carries a one-line excerpt (≤120 characters)
+    drafted by us from the post's own text, because the posts open with headings or
+    greetings that don't work as teasers. Please review and edit the 22 drafts.
+
+## FAQ page
+
+29. **US only vs US and Canada.** The live FAQ says only US residents can join; the
+    project brief says the study recruits across the US and Canada. Which is right?
+30. **"Depending on the point in the survey"** (at-home sample collection answer) —
+    should this read "point in the study"? Kept as written.
+31. **Homepage questions vs FAQ page.** The homepage's six "Questions families ask"
+    come from the design file and differ in wording from the live FAQ. Keep both sets,
+    or make the homepage a subset of the page?
+32. **Webinars.** The live site's "Webinars" menu item is an external link to the VIGOR
+    YouTube playlist. On the preview it is a short band on the homepage after Who We
+    Are, plus a footer link, not a header item. The band's one-line description is our
+    draft — please approve or supply wording.
+33. **Contact page.** A Contact page now exists at /contact/ with placeholder copy
+    (no address, email or phone). Please supply the contact details and confirm the
+    wording; the "what we can help with" list is drawn from the FAQ.

@@ -1,0 +1,27 @@
+---
+layout: default
+title: FAQ
+permalink: /faq/
+---
+{%- assign f = site.data.faq_page -%}
+<section class="page-head container" aria-labelledby="faq-page-h">
+  <div class="stack-4">
+    <span class="keyline" aria-hidden="true"></span>
+    <h1 id="faq-page-h" class="t-display">{{ f.title }}</h1>
+    <p class="t-lead text-secondary page-head__lead">{{ f.intro }}</p>
+  </div>
+</section>
+{%- comment -%} One group per section, surfaces alternating sand / cream / sand. {%- endcomment -%}
+{%- for g in f.groups %}
+<section id="{{ g.id }}" class="{% cycle 'section-band', '' %}" aria-labelledby="faq-{{ g.id }}-h">
+  <div class="section container faq">
+    <div class="faq__head stack-4">
+      <h2 id="faq-{{ g.id }}-h" class="t-heading-section">{{ g.heading }}</h2>
+      <span class="keyline" aria-hidden="true"></span>
+    </div>
+    {% include faq-list.html items=g.items prefix=g.id %}
+  </div>
+</section>
+{%- endfor %}
+{% include cta-band.html %}
+<script src="{{ '/assets/js/faq.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>

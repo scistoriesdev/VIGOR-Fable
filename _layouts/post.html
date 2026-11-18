@@ -1,0 +1,72 @@
+---
+layout: default
+---
+{%- comment -%}
+  One Updates post · WP single-update.php
+  Kicker + title + date at the col-8 measure, optional banner, then the body
+  (client HTML from the CMS export, lightly cleaned), a link back, and the
+  closing Join band. Banner is omitted when the CMS used the old logo.
+{%- endcomment -%}
+{%- case page.kind %}{% when "spotlight" %}{% assign kicker = "Team spotlight" %}{% when "update" %}{% assign kicker = "Study update" %}{% else %}{% assign kicker = "Feature" %}{% endcase -%}
+<article class="post">
+  <header class="page-head container">
+    <div class="stack-4 post__head">
+      <span class="keyline" aria-hidden="true"></span>
+      <p class="t-ui-small t-ui-small--heading post__kicker">{{ kicker }}</p>
+      <h1 class="t-heading-section">{{ page.title }}</h1>
+      {%- if page.undated != true and page.date %}
+      <time class="t-caption text-secondary" datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+      {%- endif %}
+    </div>
+  </header>
+
+  <div class="section-band">
+    <div class="section container stack-7">
+      {%- if page.banner and page.banner != "" %}
+      <img class="post__banner" src="{{ page.banner | relative_url }}" width="{{ page.banner_w }}" height="{{ page.banner_h }}" alt="{{ page.banner_alt }}" decoding="async">
+      {%- endif %}
+      <div class="post-body">
+        {{ content }}
+      </div>
+
+      {%- comment -%}
+        Previous / Next follow the index order (undated first, then newest first).
+        WordPress convention: Previous = older post, Next = newer post.
+      {%- endcomment -%}
+      {%- assign undated = site.updates | where: "undated", true | sort: "order" -%}
+      {%- assign dated = site.updates | where_exp: "p", "p.undated != true" | sort: "date" | reverse -%}
+      {%- assign ordered = undated | concat: dated -%}
+      {%- for p in ordered %}{% if p.url == page.url %}{% assign idx = forloop.index0 %}{% endif %}{% endfor -%}
+      {%- assign newer_i = idx | minus: 1 %}{% assign older_i = idx | plus: 1 -%}
+      {%- if idx > 0 %}{% assign newer = ordered[newer_i] %}{% endif -%}
+      {%- if older_i < ordered.size %}{% assign older = ordered[older_i] %}{% endif -%}
+      <nav class="post-nav" aria-label="Previous and next updates">
+        {%- if older %}
+        <a class="post-nav__link" href="{{ older.url | relative_url }}" rel="prev">
+          <span class="t-ui-small t-ui-small--heading post-nav__label">← Previous update</span>
+          <span class="t-ui-strong">{{ older.title }}</span>
+        </a>
+        {%- endif %}
+        {%- if newer %}
+        <a class="post-nav__link post-nav__link--next" href="{{ newer.url | relative_url }}" rel="next">
+          <span class="t-ui-small t-ui-small--heading post-nav__label">Next update →</span>
+          <span class="t-ui-strong">{{ newer.title }}</span>
+        </a>
+        {%- endif %}
+      </nav>
+    </div>
+  </div>
+
+  {%- comment -%} The three newest other posts, same card as the index. {%- endcomment -%}
+  {%- assign more = ordered | where_exp: "p", "p.url != page.url" | slice: 0, 3 -%}
+  <section class="section-band post-more" aria-labelledby="more-h">
+    <div class="section container stack-7">
+      <h2 id="more-h" class="t-heading-section">More updates</h2>
+      <ul class="post-grid">
+        {%- for p in more %}{% include post-card.html post=p index=99 %}{% endfor %}
+      </ul>
+      <p><a class="t-ui-strong post__back" href="{{ '/updates/' | relative_url }}">All updates →</a></p>
+    </div>
+  </section>
+</article>
+{% include cta-band.html %}

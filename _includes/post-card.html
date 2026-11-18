@@ -23,7 +23,7 @@
     {%- if p.excerpt and p.excerpt != "" %}
     <p class="post-card__excerpt t-body text-secondary">{{ p.excerpt | strip }}</p>
     {%- endif %}
-    {%- if p.date and p.date != "" %}
+    {%- if p.undated != true and p.date and p.date != "" %}
     <time class="post-card__date t-caption text-secondary" datetime="{{ p.date | date: '%Y-%m-%d' }}">{{ p.date | date: "%B %-d, %Y" }}</time>
     {%- endif %}
   </div>

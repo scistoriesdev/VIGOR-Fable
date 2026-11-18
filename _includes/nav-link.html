@@ -7,7 +7,7 @@
 {%- if item.url -%}
   {%- assign first = item.url | slice: 0 -%}
   {%- if first == "#" or item.url contains "://" or item.url contains "mailto:" -%}{%- assign href = item.url -%}{%- else -%}{%- assign href = item.url | relative_url -%}{%- endif -%}
-<a class="{{ include.class }}" href="{{ href }}">{{ item.label }}</a>
+<a class="{{ include.class }}" href="{{ href }}"{% if item.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ item.label }}</a>
 {%- else -%}
 <span class="{{ include.class }}">{{ item.label }}</span>
 {%- endif -%}

@@ -1,0 +1,59 @@
+# FAQ page — captured from https://vigor.umassmed.edu/vigor/s/faq (2026-11-17).
+# Client copy, verbatim apart from obvious typos (noted inline). Three groups,
+# live order. Field names map to the Carbon Fields the WordPress template will use.
+
+title: VIGOR FAQ
+intro: A place where you can easily find answers to all your questions about our study
+
+groups:
+  - heading: Study overview
+    id: overview
+    items:
+      - q: "What does VIGOR mean?"
+        a: "Vitiligo Genetics of Onset and Relapse, because this study seeks to understand the underlying factors that cause vitiligo in the first place as well as the factors that cause established vitiligo to progress."
+      - q: "Can only people with vitiligo enroll?"
+        a: "No! In fact, we need to enroll more people without vitiligo than those with the condition. We only need at least one person in the family to have vitiligo."
+      - q: "How big is the study?"
+        a: "We plan to enroll 1,000 people: 200 people with vitiligo plus 800 of their close family members who don’t have vitiligo."   # "1000" → "1,000" to match the site
+      - q: "Who is considered a “close family member” for the purposes of this study?"
+        a: "The parents, children, siblings, cousins, aunts, and uncles of individuals with vitiligo are eligible to enroll in VIGOR."
+      - q: "How long will this study last?"
+        a: "The initial study period is five years, but we hope that it will continue for many years after that!"
+      - q: "Can individuals who are from outside of the United States join the study?"
+        # Conflicts with the project brief ("across the US and Canada") — see docs/CLIENT-QUESTIONS.md
+        a: "Unfortunately, only individuals residing in the United States can join the study. In the future, we hope to partner with international researchers to expand VIGOR to other countries."
+      - q: "I have a family member that is interested in participating in the study. Can they still join?"
+        a: "Yes! Please send an email to <a href=\"mailto:vigor@umassmed.edu\">vigor@umassmed.edu</a> and we will coordinate the next steps."
+
+  - heading: Sample collection
+    id: samples
+    items:
+      - q: "Do I need to complete any paperwork to participate in VIGOR?"
+        a: "Yes, you will need to complete a consent form. This will be delivered electronically via the VIGOR app. If you cannot use the app, our team will work with you to ensure you can fill out the correct forms."
+      - q: "I’ve signed up for the study. What is expected of me?"
+        a: "You will complete surveys, delivered to you via the VIGOR app every 3 months. Additionally, you will be sent at-home sample collection materials twice a year."
+      - q: "What is involved in the at-home sample collection?"
+        # "point in the survey" kept as written; probably "point in the study" — see docs/CLIENT-QUESTIONS.md
+        a: "Depending on the point in the survey, you might need to send in one or more of the following: saliva, blood (collected with a Tasso device), micropatch skin sample, and/or hair sample. You can find out more about each of these on our <a href=\"/study-details/\">website</a>."   # link text as on the live site; now points at our Study Details page
+      - q: "Are there instructions to tell me how to use the specimen collection devices?"
+        a: "Yes! Step-by-step instructions will show up inside the VIGOR app and you can also see them on our website."   # typo fixed: "Step-by-step will show up" → "Step-by-step instructions will show up"
+      - q: "How do I send the specimens back to you?"
+        a: "Return shipping labels will be included with your package and directions for shipping will be included in the VIGOR app."
+      - q: "I had a new white spot appear on my skin. What should I do?"
+        a: "Please notify us ASAP using the VIGOR app. We will ask you to also send us a photo, answer additional survey questions, and we may send a specimen collection package to get updated samples from you."
+      - q: "Will I be asked to take any medications or stop my current medications as a participant in this study?"
+        a: "No, we are not investigating new treatments during this study."
+
+  - heading: Basics of vitiligo
+    id: vitiligo
+    items:
+      - q: "What causes vitiligo?"
+        a: "Vitiligo is an autoimmune disease where the body’s immune system inappropriately recognizes the pigment producing cells in the skin and kills them. When these cells are destroyed, white patches of skin appear."
+      - q: "Can vitiligo be treated?"
+        a: "Yes! In 2022, Opzelura, the first FDA-approved treatment to repigment vitiligo spots was approved. This medication suppresses the immune system attack in the skin allowing pigment-producing melanocytes to regrow and hence repigment the skin. However, if treatment is stopped, vitiligo usually reappears. One of the goals of the VIGOR study is to better understand this condition so that it can be prevented before it starts."
+      - q: "Is vitiligo a genetic disease?"
+        a: "Vitiligo has a strong genetic component, but it is a complex process that is also impacted by environmental factors. The VIGOR study seeks to better understand both the genetic and environmental contributions to vitiligo onset."
+      - q: "Is vitiligo associated with other autoimmune conditions?"
+        a: "Yes, individuals with vitiligo are also more likely to develop other autoimmune conditions including Type 1 diabetes, autoimmune thyroid disease, systemic lupus, and others."
+      - q: "Does having vitiligo increase the risk of developing skin cancer?"
+        a: "Actually, individuals with vitiligo are associated with lower mortality from skin cancer. Interestingly, this includes all types of skin cancers, not just melanoma (cancer of the pigment producing cells in the skin). In fact, some individuals who undergo successful treatment for melanoma end up developing vitiligo after clearing their cancer."

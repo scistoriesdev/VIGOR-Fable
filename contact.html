@@ -1,0 +1,38 @@
+---
+layout: default
+title: Contact
+permalink: /contact/
+---
+{%- comment -%}
+  Contact · WP page-contact.php
+  PLACEHOLDER copy so the page is not empty in the prototype. No address, email or
+  phone is shown until the client confirms them — see docs/CLIENT-QUESTIONS.md.
+  The "what we can help with" topics come from the FAQ.
+{%- endcomment -%}
+<section class="page-head container" aria-labelledby="contact-h">
+  <div class="stack-4">
+    <span class="keyline" aria-hidden="true"></span>
+    <h1 id="contact-h" class="t-display">Contact the VIGOR team</h1>
+    <p class="t-lead text-secondary page-head__lead">We’re happy to answer questions about the study, your sample kits, or the VIGOR app.</p>
+  </div>
+</section>
+
+<section class="section-band" aria-labelledby="reach-h">
+  <div class="section container row-6-6 row-6-6--top">
+    <div class="stack-4">
+      <h2 id="reach-h" class="t-heading-card">Get in touch</h2>
+      <p class="t-body text-secondary">Whether you’re thinking about joining, already enrolled, or simply curious about the research, the VIGOR team would love to hear from you.</p>
+      <p class="t-body text-secondary">Contact details will be published here.</p>
+    </div>
+    <div class="card">
+      <h2 class="t-heading-card">What we can help with</h2>
+      <ul class="dot-list">
+        <li class="t-body"><img src="{{ '/assets/img/dot.svg' | relative_url }}" width="11" height="28" alt="">Joining the study, for you or a family member</li>
+        <li class="t-body"><img src="{{ '/assets/img/dot.svg' | relative_url }}" width="11" height="28" alt="">Sample kits, instructions and return shipping</li>
+        <li class="t-body"><img src="{{ '/assets/img/dot.svg' | relative_url }}" width="11" height="28" alt="">The VIGOR app and your surveys</li>
+        <li class="t-body"><img src="{{ '/assets/img/dot.svg' | relative_url }}" width="11" height="28" alt="">How your samples and data are protected</li>
+      </ul>
+    </div>
+  </div>
+</section>
+{% include cta-band.html %}

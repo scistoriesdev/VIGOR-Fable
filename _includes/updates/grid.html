@@ -1,11 +1,11 @@
 {%- comment -%}
   Updates · post grid · WP template-parts/post-grid.php
-  Order: undated posts first in live order (they are the newest), then the
-  rest newest-first. One card per post; see post-card.html.
+  Cards come from the `updates` collection (one document per post). Order:
+  undated posts first by their `order` (they are the newest), then newest first.
 {%- endcomment -%}
-{%- assign posts = site.data.updates.posts -%}
-{%- assign undated = posts | where_exp: "p", "p.date == ''" -%}
-{%- assign dated = posts | where_exp: "p", "p.date != ''" | sort: "date" | reverse -%}
+{%- comment -%} Jekyll gives every document a date (build time) when none is set, so undated posts carry `undated: true`. {%- endcomment -%}
+{%- assign undated = site.updates | where: "undated", true | sort: "order" -%}
+{%- assign dated = site.updates | where_exp: "p", "p.undated != true" | sort: "date" | reverse -%}
 <section class="section-band" aria-labelledby="posts-h">
   <div class="section container">
     <h2 id="posts-h" class="visually-hidden">All posts</h2>

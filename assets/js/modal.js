@@ -1,4 +1,4 @@
-/* VIGOR — bio modal and FAQ accordion. No dependencies. */
+/* VIGOR — bio modal. No dependencies. (FAQ accordion lives in faq.js.) */
 (function () {
   'use strict';
 
@@ -93,18 +93,4 @@
       else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     });
   }
-
-  /* ---------------- FAQ accordion ---------------- */
-  // Without JS every panel stays open. With JS, collapsed ones hide.
-  var triggers = document.querySelectorAll('.faq__trigger');
-  Array.prototype.forEach.call(triggers, function (btn) {
-    var panel = document.getElementById(btn.getAttribute('aria-controls'));
-    if (!panel) return;
-    panel.hidden = btn.getAttribute('aria-expanded') !== 'true';
-    btn.addEventListener('click', function () {
-      var expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!expanded));
-      panel.hidden = expanded;
-    });
-  });
 })();

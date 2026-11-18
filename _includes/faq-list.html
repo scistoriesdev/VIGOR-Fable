@@ -1,0 +1,23 @@
+{%- comment -%}
+  Accordion list · WP template-parts/faq-list.php
+  include.items  — array of { q, a }      include.prefix — unique id prefix per list
+  Triggers are <button aria-expanded>; the first item starts open. Panels work
+  without JS (all open) and collapse once faq.js runs.
+{%- endcomment -%}
+<div class="faq__list">
+  {%- for item in include.items %}
+  <div class="faq__item">
+    <h3 class="faq__q">
+      <button type="button" class="faq__trigger t-ui-strong" id="{{ include.prefix }}-b{{ forloop.index }}" aria-controls="{{ include.prefix }}-p{{ forloop.index }}" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}">
+        <span>{{ item.q }}</span>
+        <span class="faq__chev" aria-hidden="true">▾</span>
+      </button>
+    </h3>
+    <div class="faq__panel" id="{{ include.prefix }}-p{{ forloop.index }}" role="region" aria-labelledby="{{ include.prefix }}-b{{ forloop.index }}">
+      {%- comment -%} Data strings are not Liquid-processed, so site-relative hrefs get the baseurl here. {%- endcomment -%}
+      {%- capture root %}href="{{ "/" | relative_url }}{% endcapture -%}
+      <p class="t-body">{{ item.a | replace: 'href="/', root }}</p>
+    </div>
+  </div>
+  {%- endfor %}
+</div>
